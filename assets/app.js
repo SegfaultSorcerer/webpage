@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════
-   Patrik Neumann — Portfolio
+   Patrik Neumann | Portfolio
    JavaScript: i18n, typing, animations, GitHub, toggles
    ═══════════════════════════════════════════════════════ */
 
@@ -15,7 +15,7 @@ const translations = {
 
     // Hero
     "hero.greeting": "Hello, I'm",
-    "hero.education": "M.Sc. Applied Computer Science — University of Duisburg-Essen",
+    "hero.education": "M.Sc. Applied Computer Science, University of Duisburg-Essen",
     "hero.location": "Frankfurt am Main, Germany",
     "hero.subtitle": "Engineering robust systems at the intersection of enterprise Java and artificial intelligence.",
     "hero.cta.work": "View My Work",
@@ -25,8 +25,8 @@ const translations = {
     "about.label": "About Me",
     "about.title": "Building Software That Matters",
     "about.p1": "I am a senior full-stack developer and team lead based in the Frankfurt am Main area, holding a Master's degree in Applied Computer Science from the University of Duisburg-Essen. With deep expertise in the Java and Spring ecosystem, I design and build enterprise-grade microservice architectures, complex database systems, and full-stack web applications that serve critical business functions in healthcare and pharmaceutical industries.",
-    "about.p2": "What excites me most is the convergence of traditional software engineering with artificial intelligence. I actively integrate LLMs, document processing AI, and intelligent automation into production systems — not as experiments, but as reliable, tested components of enterprise software. From Spring AI to Claude and Codex, I believe the next generation of great software will be built by developers who understand both solid architecture and AI capabilities.",
-    "about.p3": "I value clean API design, maintainable codebases, and pragmatic solutions over hype-driven development. Whether it is a Spring Boot microservice handling millions of transactions, a JavaFX desktop application with a custom UI framework, or an Angular frontend with complex domain logic — I focus on building software that works reliably at scale and is a pleasure for other developers to maintain.",
+    "about.p2": "What excites me most is the convergence of traditional software engineering with artificial intelligence. I actively integrate LLMs, document processing AI, and intelligent automation into production systems. Not as experiments, but as reliable, tested components of enterprise software. From Spring AI to Claude and Codex, I believe the next generation of great software will be built by developers who understand both solid architecture and AI capabilities.",
+    "about.p3": "I value clean API design, maintainable codebases, and pragmatic solutions over hype-driven development. Whether it is a Spring Boot microservice handling millions of transactions, a JavaFX desktop application with a custom UI framework, or an Angular frontend with complex domain logic, my focus is on building software that works reliably at scale and is a pleasure for other developers to maintain.",
 
     // Terminal
     "terminal.title": "~/about-patrik",
@@ -49,7 +49,7 @@ const translations = {
     // Projects
     "projects.label": "Selected Work",
     "projects.title": "What I Build",
-    "projects.subtitle": "Project types and domains I specialize in — built with care, engineered for scale.",
+    "projects.subtitle": "Project types and domains I specialize in. Built with care, engineered for scale.",
 
     "project.1.title": "Enterprise Microservices Platform",
     "project.1.desc": "Designed and built large-scale Spring Boot microservice architectures serving millions of healthcare data transactions. Focused on clean API design, resilience patterns, and maintainable service meshes.",
@@ -73,8 +73,8 @@ const translations = {
     "github.error": "Could not load repositories. Visit my GitHub profile directly.",
     "github.stars": "stars",
     "github.member_since": "Member since 2014",
-    "github.coming_soon": "More projects coming soon — I'm actively moving personal projects to open source.",
-    "github.no_repos": "No public repositories yet — visit my profile directly.",
+    "github.coming_soon": "More projects coming soon. I'm actively moving personal projects to open source.",
+    "github.no_repos": "No public repositories yet. Visit my profile directly.",
 
     // Contact
     "contact.label": "Get In Touch",
@@ -96,7 +96,7 @@ const translations = {
 
     // Hero
     "hero.greeting": "Hallo, ich bin",
-    "hero.education": "M.Sc. Angewandte Informatik — Universität Duisburg-Essen",
+    "hero.education": "M.Sc. Angewandte Informatik, Universität Duisburg-Essen",
     "hero.location": "Frankfurt am Main, Deutschland",
     "hero.subtitle": "Entwicklung robuster Systeme an der Schnittstelle von Enterprise Java und künstlicher Intelligenz.",
     "hero.cta.work": "Meine Arbeit",
@@ -106,8 +106,8 @@ const translations = {
     "about.label": "Über mich",
     "about.title": "Software die zählt",
     "about.p1": "Ich bin ein erfahrener Full-Stack-Entwickler und Teamleiter im Raum Frankfurt am Main mit einem Masterabschluss in Angewandter Informatik der Universität Duisburg-Essen. Mit tiefgehender Expertise im Java- und Spring-Ökosystem entwerfe und entwickle ich Enterprise-Microservice-Architekturen, komplexe Datenbanksysteme und Full-Stack-Webanwendungen für geschäftskritische Funktionen im Gesundheits- und Pharmabereich.",
-    "about.p2": "Was mich am meisten begeistert, ist die Verschmelzung traditioneller Softwareentwicklung mit künstlicher Intelligenz. Ich integriere aktiv LLMs, KI-gestützte Dokumentenverarbeitung und intelligente Automatisierung in Produktivsysteme — nicht als Experimente, sondern als zuverlässige, getestete Komponenten von Enterprise-Software. Von Spring AI bis Claude und Codex — ich bin überzeugt, dass die nächste Generation großartiger Software von Entwicklern gebaut wird, die sowohl solide Architektur als auch KI-Fähigkeiten verstehen.",
-    "about.p3": "Ich schätze sauberes API-Design, wartbare Codebasen und pragmatische Lösungen mehr als Hype-getriebene Entwicklung. Ob Spring-Boot-Microservice mit Millionen von Transaktionen, JavaFX-Desktopanwendung mit eigenem UI-Framework oder Angular-Frontend mit komplexer Domänenlogik — ich konzentriere mich darauf, Software zu bauen, die zuverlässig skaliert und die andere Entwickler gerne warten.",
+    "about.p2": "Was mich am meisten begeistert, ist die Verschmelzung traditioneller Softwareentwicklung mit künstlicher Intelligenz. Ich integriere aktiv LLMs, KI-gestützte Dokumentenverarbeitung und intelligente Automatisierung in Produktivsysteme. Nicht als Experimente, sondern als zuverlässige, getestete Komponenten von Enterprise-Software. Von Spring AI bis Claude und Codex bin ich überzeugt, dass die nächste Generation großartiger Software von Entwicklern gebaut wird, die sowohl solide Architektur als auch KI-Fähigkeiten verstehen.",
+    "about.p3": "Ich schätze sauberes API-Design, wartbare Codebasen und pragmatische Lösungen mehr als Hype-getriebene Entwicklung. Ob Spring-Boot-Microservice mit Millionen von Transaktionen, JavaFX-Desktopanwendung mit eigenem UI-Framework oder Angular-Frontend mit komplexer Domänenlogik, mein Fokus liegt darauf, Software zu bauen, die zuverlässig skaliert und die andere Entwickler gerne warten.",
 
     // Terminal
     "terminal.title": "~/über-patrik",
@@ -130,7 +130,7 @@ const translations = {
     // Projects
     "projects.label": "Ausgewählte Arbeiten",
     "projects.title": "Was ich baue",
-    "projects.subtitle": "Projekttypen und Domänen in denen ich mich spezialisiere — mit Sorgfalt gebaut, für Skalierung entwickelt.",
+    "projects.subtitle": "Projekttypen und Domänen in denen ich mich spezialisiere. Mit Sorgfalt gebaut, für Skalierung entwickelt.",
 
     "project.1.title": "Enterprise Microservices Plattform",
     "project.1.desc": "Entwurf und Aufbau großer Spring-Boot-Microservice-Architekturen für Millionen von Gesundheitsdaten-Transaktionen. Fokus auf sauberes API-Design, Resilienz-Muster und wartbare Service-Meshes.",
@@ -154,8 +154,8 @@ const translations = {
     "github.error": "Repositories konnten nicht geladen werden. Besuche mein GitHub-Profil direkt.",
     "github.stars": "Sterne",
     "github.member_since": "Mitglied seit 2014",
-    "github.coming_soon": "Weitere Projekte folgen — ich veröffentliche aktiv persönliche Projekte als Open Source.",
-    "github.no_repos": "Noch keine öffentlichen Repositories — besuche mein Profil direkt.",
+    "github.coming_soon": "Weitere Projekte folgen. Ich veröffentliche aktiv persönliche Projekte als Open Source.",
+    "github.no_repos": "Noch keine öffentlichen Repositories. Besuche mein Profil direkt.",
 
     // Contact
     "contact.label": "Kontakt",
