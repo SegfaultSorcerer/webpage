@@ -472,7 +472,7 @@ async function fetchGitHubRepos() {
   }
 
   try {
-    const res = await fetch('https://api.github.com/users/SegfaultSorcerer/repos?sort=updated&per_page=6');
+    const res = await fetch('https://api.github.com/users/SegfaultSorcerer/repos?sort=updated&per_page=20');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const repos = await res.json();
     sessionStorage.setItem(cacheKey, JSON.stringify(repos));
