@@ -492,7 +492,8 @@ async function fetchGitHubRepos() {
 
 function renderRepos(repos, container) {
   // Filter out forked repos — show only original work
-  const originalRepos = (repos || []).filter(repo => !repo.fork);
+  const hiddenRepos = ['webpage', 'SegfaultSorcerer'];
+  const originalRepos = (repos || []).filter(repo => !repo.fork && !hiddenRepos.includes(repo.name));
 
   if (originalRepos.length === 0) {
     container.innerHTML = `
