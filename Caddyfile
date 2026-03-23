@@ -1,3 +1,11 @@
 me.raistlin.net {
-    reverse_proxy web:80
+	reverse_proxy web:80
+}
+
+blog.animus.raistlin.net {
+	reverse_proxy animus-blog:8080
+}
+
+dashboard.animus.raistlin.net {
+	reverse_proxy animus-dashboard:3000
 }
