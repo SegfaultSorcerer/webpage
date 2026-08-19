@@ -149,9 +149,25 @@ async function initData() {
     console.warn('GitHub unavailable, falling back to static catalogue data.', error);
   }
 
-  initCatalogue(catalogueRoot, repos);
-  renderTransmissions(feed, repos, currentLang());
-  renderRepoCount(repos);
+  // Everything below must run even if one step throws, so a malformed
+  // response can't leave the chart, feed or language listener half-wired.
+  try {
+    initCatalogue(catalogueRoot, repos);
+  } catch (error) {
+    console.error('Failed to initialise the catalogue chart.', error);
+  }
+
+  try {
+    renderTransmissions(feed, repos, currentLang());
+  } catch (error) {
+    console.error('Failed to render the transmissions feed.', error);
+  }
+
+  try {
+    renderRepoCount(repos);
+  } catch (error) {
+    console.error('Failed to render the repository count.', error);
+  }
 
   onLanguageChange((lang) => renderTransmissions(feed, repos, lang));
 }
@@ -165,7 +181,7 @@ function boot() {
   initMobileMenu();
   initScrollReveal();
   initActiveSection();
-  initData();
+  initData().catch((error) => console.error('Failed to initialise repository data.', error));
 }
 
 if (document.readyState === 'loading') {

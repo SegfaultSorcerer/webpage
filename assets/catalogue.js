@@ -28,6 +28,19 @@ function byName(name) {
   return TOOLS.find((tool) => tool.name === name);
 }
 
+/** Localised "N star"/"N stars" word for a count, sharing the singular/plural keys. */
+function starWord(lang, count) {
+  const key = count === 1 ? 'catalogue.star_one' : 'catalogue.star_other';
+  return translate(translations, lang, key);
+}
+
+/** Accessible name for a chart star: "name, N star(s)" in the current language. */
+function chartTitleText(tool, count) {
+  if (count === null) return tool.name;
+  const lang = currentLang();
+  return `${tool.name}, ${count} ${starWord(lang, count)}`;
+}
+
 /** name -> license (SPDX id or null), for the entry panel. */
 function licensesByName(repos) {
   const map = new Map();
@@ -46,6 +59,7 @@ export function initCatalogue(root, repos) {
   const stars = starsByName(repos);
   const licenses = licensesByName(repos);
   const hasData = stars.size > 0;
+  const titles = [];
 
   EDGES.forEach(([fromName, toName]) => {
     const from = byName(fromName);
@@ -95,7 +109,8 @@ export function initCatalogue(root, repos) {
     label.textContent = tool.name;
 
     const title = document.createElementNS(SVG_NS, 'title');
-    title.textContent = count === null ? tool.name : `${tool.name}, ${count} stars`;
+    title.textContent = chartTitleText(tool, count);
+    titles.push({ el: title, tool, count });
 
     link.append(title, halo, disc, label);
     starLayer.appendChild(link);
@@ -106,7 +121,12 @@ export function initCatalogue(root, repos) {
   });
 
   renderIntro(entry);
-  onLanguageChange(() => renderIntro(entry));
+  onLanguageChange(() => {
+    renderIntro(entry);
+    titles.forEach(({ el, tool, count }) => {
+      el.textContent = chartTitleText(tool, count);
+    });
+  });
 
   svg.addEventListener('mouseleave', () => renderIntro(entry));
 }
@@ -120,7 +140,7 @@ function renderIntro(entry) {
 function renderEntry(entry, tool, count, licence) {
   const lang = currentLang();
   const description = translate(translations, lang, `catalogue.${tool.name}`);
-  const starsLabel = translate(translations, lang, 'catalogue.stars');
+  const starsLabel = count === null ? '' : starWord(lang, count);
   const openLabel = translate(translations, lang, 'catalogue.open');
 
   entry.dataset.tool = tool.name;

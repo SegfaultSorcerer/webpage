@@ -93,7 +93,7 @@
 .btn:hover { border-color: var(--ice); color: var(--ice); }
 .btn--ghost { border-color: var(--rule); color: var(--dim); }
 .btn--ghost:hover { border-color: var(--ice); color: var(--ice); }
-.btn--compact { padding: var(--s-1) var(--s-3); font-size: var(--t-xs); min-height: 44px; }
+.btn--compact { padding: var(--s-1) var(--s-3); font-size: var(--t-xs); min-height: 44px; min-width: 44px; }
 
 .menu-toggle {
   display: inline-flex;
