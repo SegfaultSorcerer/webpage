@@ -203,7 +203,32 @@
         </div>
       </div>
     </section>
-    <!-- Task 7 inserts #catalogue here -->
+    <section id="catalogue" class="plate">
+      <div class="container">
+        <header class="plate__head reveal">
+          <span class="eyebrow" data-i18n="catalogue.eyebrow">Catalogue</span>
+          <h2 class="plate__title" data-i18n="catalogue.title">Five instruments for reading the dead</h2>
+          <p class="plate__lead" data-i18n="catalogue.lead">Open-source tooling for JVM forensics, published as SegfaultSorcerer. Star size on the chart is the repository's GitHub star count; star colour is its main language.</p>
+        </header>
+
+        <div class="catalogue reveal" id="catalogue-root">
+          <figure class="chart">
+            <svg class="chart__svg" viewBox="0 0 100 72" role="group" data-i18n-label="catalogue.chart_alt" aria-label="Star chart of five open-source tools">
+              <g class="chart__lines" stroke="#2C3A52" stroke-width="0.18" fill="none"></g>
+              <g class="chart__stars"></g>
+            </svg>
+            <figcaption class="chart__legend mono">
+              <span data-i18n="catalogue.legend_size">Size = GitHub stars</span>
+              <span class="legend__key"><i style="--c:#A8C8FF"></i>Shell</span>
+              <span class="legend__key"><i style="--c:#FFE9B8"></i>Python</span>
+              <span class="legend__key"><i style="--c:#FFB86B"></i>Rust</span>
+            </figcaption>
+          </figure>
+
+          <div class="entry" id="catalogue-entry" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
     <!-- Task 8 inserts #log here -->
     <!-- Task 9 inserts #transmissions here -->
   </main>

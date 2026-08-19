@@ -6,6 +6,8 @@
 import { initLanguage } from './i18n.js';
 import { initStarfield } from './starfield.js';
 import { experienceYears } from './lib.js';
+import { fetchRepos } from './github.js';
+import { initCatalogue } from './catalogue.js';
 
 const SECTION_IDS = ['observer', 'instruments', 'catalogue', 'log', 'transmissions'];
 
@@ -96,6 +98,17 @@ function initFacts() {
   if (slot) slot.textContent = String(experienceYears());
 }
 
+async function initData() {
+  const catalogueRoot = document.getElementById('catalogue-root');
+  let repos = null;
+  try {
+    repos = await fetchRepos();
+  } catch (error) {
+    console.warn('GitHub unavailable, falling back to static catalogue data.', error);
+  }
+  initCatalogue(catalogueRoot, repos);
+}
+
 function boot() {
   initLanguage();
   initFacts();
@@ -105,6 +118,7 @@ function boot() {
   initMobileMenu();
   initScrollReveal();
   initActiveSection();
+  initData();
 }
 
 if (document.readyState === 'loading') {
