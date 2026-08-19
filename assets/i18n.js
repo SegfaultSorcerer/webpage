@@ -13,6 +13,19 @@ export const translations = {
     'nav.transmissions': 'Transmissions',
 
     'footer.built': 'Hand-written HTML, CSS and JavaScript. No frameworks.',
+
+    'hero.eyebrow': 'Segfaultsorcerer · Frankfurt am Main · 50.11°N 8.68°E',
+    'hero.spectrum_alt': 'Spectral analysis showing Java, Spring, JVM, Oracle, Angular and AI as absorption lines',
+    'hero.line': "I build systems that have to keep running. And the tools that explain why they don't.",
+    'hero.cta_catalogue': 'See the catalogue',
+    'hero.cta_github': 'GitHub profile',
+
+    'facts.experience': 'Experience',
+    'facts.years': 'years',
+    'facts.team': 'Team',
+    'facts.developers': 'developers',
+    'facts.systems': 'Systems in production',
+    'facts.repos': 'Public repositories',
   },
   de: {
     'a11y.skip': 'Zum Inhalt springen',
@@ -26,6 +39,19 @@ export const translations = {
     'nav.transmissions': 'Signale',
 
     'footer.built': 'Handgeschriebenes HTML, CSS und JavaScript. Ohne Framework.',
+
+    'hero.eyebrow': 'Segfaultsorcerer · Frankfurt am Main · 50,11°N 8,68°E',
+    'hero.spectrum_alt': 'Spektralanalyse mit Java, Spring, JVM, Oracle, Angular und KI als Absorptionslinien',
+    'hero.line': 'Ich baue Systeme, die laufen müssen. Und die Werkzeuge, die erklären, warum sie es nicht tun.',
+    'hero.cta_catalogue': 'Zum Katalog',
+    'hero.cta_github': 'GitHub-Profil',
+
+    'facts.experience': 'Erfahrung',
+    'facts.years': 'Jahre',
+    'facts.team': 'Team',
+    'facts.developers': 'Entwickler',
+    'facts.systems': 'Systeme in Produktion',
+    'facts.repos': 'Öffentliche Repositories',
   },
 };
 

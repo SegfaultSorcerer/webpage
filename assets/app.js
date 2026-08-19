@@ -5,6 +5,7 @@
 
 import { initLanguage } from './i18n.js';
 import { initStarfield } from './starfield.js';
+import { experienceYears } from './lib.js';
 
 const SECTION_IDS = ['observer', 'instruments', 'catalogue', 'log', 'transmissions'];
 
@@ -79,8 +80,26 @@ function initActiveSection() {
   });
 }
 
+function initHeroSequence() {
+  const start = () => document.body.classList.add('is-loaded');
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(start).catch(start);
+    // Never let a font failure hold the hero hostage.
+    setTimeout(start, 1200);
+  } else {
+    start();
+  }
+}
+
+function initFacts() {
+  const slot = document.querySelector('[data-fact="years"]');
+  if (slot) slot.textContent = String(experienceYears());
+}
+
 function boot() {
   initLanguage();
+  initFacts();
+  initHeroSequence();
   initStarfield(document.getElementById('starfield'));
   initTopbar();
   initMobileMenu();
