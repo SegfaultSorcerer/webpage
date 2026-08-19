@@ -1,0 +1,86 @@
+/* ── Catalogue constellation ──────────────────────────────────── */
+
+.catalogue {
+  display: grid;
+  gap: var(--s-8);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .catalogue { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s-12); }
+}
+
+.chart {
+  margin: 0;
+  border: 1px solid var(--rule);
+  background:
+    linear-gradient(var(--rule) 1px, transparent 1px) 0 0 / 100% 40px,
+    linear-gradient(90deg, var(--rule) 1px, transparent 1px) 0 0 / 40px 100%,
+    var(--panel);
+  background-blend-mode: normal;
+  padding: var(--s-4);
+}
+
+.chart__svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.chart__star { cursor: pointer; }
+.chart__halo { opacity: 0.14; transition: opacity 200ms ease; }
+.chart__disc { transition: transform 200ms ease; transform-origin: center; transform-box: fill-box; }
+.chart__label {
+  font-family: var(--mono);
+  font-size: 2.4px;
+  letter-spacing: 0.14em;
+  fill: var(--dim);
+  transition: fill 180ms ease;
+}
+
+.chart__star:hover .chart__halo,
+.chart__star:focus-visible .chart__halo { opacity: 0.3; }
+.chart__star:hover .chart__label,
+.chart__star:focus-visible .chart__label { fill: var(--starlight); }
+.chart__star:focus-visible { outline: none; }
+.chart__star:focus-visible .chart__disc { stroke: var(--ice); stroke-width: 0.6; }
+
+.chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  margin-top: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--rule);
+  color: var(--dim);
+}
+.legend__key { display: inline-flex; align-items: center; gap: var(--s-2); }
+.legend__key i,
+.entry__meta i {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c);
+  display: inline-block;
+}
+
+/* ── Entry panel ── */
+
+.entry {
+  border-left: 1px solid var(--rule);
+  padding-left: var(--s-6);
+  min-height: 200px;
+}
+@media (max-width: 899px) {
+  .entry { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: var(--s-6); }
+}
+
+.entry__intro { color: var(--dim); font-size: var(--t-sm); }
+.entry__designation {
+  font-size: var(--t-sm);
+  letter-spacing: 0.2em;
+  color: var(--ice);
+  margin-bottom: var(--s-2);
+}
+.entry__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--dim);
+  margin-bottom: var(--s-4);
+}
+.entry__text { color: var(--parchment); font-size: var(--t-sm); margin-bottom: var(--s-4); }

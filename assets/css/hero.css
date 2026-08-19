@@ -1,0 +1,183 @@
+/* ── Hero, spectrum, facts bar ────────────────────────────────── */
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: calc(68px + var(--s-16)) var(--s-16);
+}
+
+.hero__inner { width: 100%; }
+
+.hero__eyebrow {
+  color: var(--dim);
+  margin: 0 0 var(--s-6);
+  max-width: none;
+}
+
+.hero__name {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(3rem, 13vw, var(--t-3xl));
+  font-weight: 700;
+  color: var(--starlight);
+  margin-bottom: var(--s-8);
+}
+.hero__name span { display: block; }
+
+.spectrum {
+  position: relative;
+  margin-bottom: var(--s-8);
+  max-width: 860px;
+}
+.spectrum svg { display: block; width: 100%; height: 84px; }
+
+.spectrum__labels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 1.4em;
+}
+.spectrum__labels li {
+  position: absolute;
+  left: var(--x);
+  transform: translateX(-50%);
+  color: var(--parchment);
+  font-size: var(--t-xs);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+/* Below this width the six labels cannot sit under their ticks without
+   colliding (measured: overlap persists through 391px, clears by 393px),
+   so they become a wrapped legend instead. 480px gives a safety margin
+   above the measured threshold. */
+@media (max-width: 480px) {
+  .spectrum__labels {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-4);
+  }
+  .spectrum__labels li {
+    position: static;
+    left: auto;
+    transform: none;
+  }
+}
+
+.hero__line {
+  font-size: var(--t-md);
+  line-height: 1.5;
+  color: var(--starlight);
+  border-left: 1px solid var(--ember);
+  padding-left: var(--s-4);
+  max-width: 46ch;
+  margin-bottom: var(--s-8);
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+
+/* ── Load sequence ── */
+
+.hero__eyebrow,
+.hero__name span,
+.spectrum,
+.spectrum__labels,
+.hero__line,
+.hero__actions { opacity: 0; }
+
+.is-loaded .hero__eyebrow { animation: rise 600ms 600ms ease forwards; }
+.is-loaded .hero__name span:first-child { animation: rise 700ms 200ms ease forwards; }
+.is-loaded .hero__name span:last-child { animation: rise 700ms 320ms ease forwards; }
+.is-loaded .spectrum { animation: fade 500ms 700ms ease forwards; }
+.is-loaded .spectrum__labels { animation: fade 500ms 1300ms ease forwards; }
+.is-loaded .hero__line { animation: rise 600ms 1200ms ease forwards; }
+.is-loaded .hero__actions { animation: rise 600ms 1350ms ease forwards; }
+
+.is-loaded .spectrum__band {
+  transform-origin: left center;
+  animation: wipe 420ms 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.is-loaded .spectrum__line {
+  opacity: 0;
+  animation: drop 240ms ease forwards;
+  animation-delay: calc(1000ms + var(--i) * 60ms);
+}
+.is-loaded .spectrum__ticks { animation: fade 400ms 1300ms ease forwards; opacity: 0; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade { to { opacity: 1; } }
+@keyframes wipe { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes drop {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__eyebrow,
+  .hero__name span,
+  .spectrum,
+  .spectrum__labels,
+  .hero__line,
+  .hero__actions,
+  .spectrum__line,
+  .spectrum__ticks { opacity: 1 !important; }
+
+  .spectrum__band { transform: none !important; }
+}
+
+/* ── Facts bar ── */
+
+.facts {
+  border-block: 1px solid var(--rule);
+  background: var(--deepfield);
+}
+.facts__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .facts__inner { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .facts__inner { grid-template-columns: repeat(4, 1fr); }
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: var(--s-6) 0;
+  border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 640px) {
+  .fact {
+    border-bottom: 0;
+    border-left: 1px solid var(--rule);
+    padding-inline: var(--s-6);
+  }
+  .fact:first-child { border-left: 0; padding-left: 0; }
+}
+
+.fact[hidden] { display: none; }
+
+.fact__label { color: var(--dim); }
+.fact__value {
+  font-family: var(--display);
+  font-size: var(--t-lg);
+  color: var(--parchment);
+  line-height: 1.1;
+}
+.fact__value span[data-i18n] {
+  font-family: var(--mono);
+  font-size: var(--t-sm);
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  text-transform: lowercase;
+}

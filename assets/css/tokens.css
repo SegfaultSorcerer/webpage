@@ -1,0 +1,142 @@
+/* ── Design tokens, reset, base typography ─────────────────────── */
+
+:root {
+  /* Palette */
+  --void: #04060C;
+  --deepfield: #080C16;
+  --panel: #0E131F;
+  --rule: #1B2434;
+  --rule-bright: #2C3A52;
+  --starlight: #E6E9F2;
+  --parchment: #CFC5AE;
+  --dim: #7C8799;
+  --ice: #8FC7FF;
+  --ember: #F2A65A;
+
+  /* Type */
+  --display: 'Newsreader', 'Times New Roman', serif;
+  --prose: 'Spectral', Georgia, serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --t-xs: 0.6875rem;
+  --t-sm: 0.8125rem;
+  --t-base: 1rem;
+  --t-md: 1.25rem;
+  --t-lg: 1.75rem;
+  --t-xl: 2.75rem;
+  --t-2xl: 4.5rem;
+  --t-3xl: 7rem;
+
+  /* Space, 4px scale */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-6: 1.5rem;
+  --s-8: 2rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+  --s-24: 6rem;
+  --s-40: 10rem;
+
+  --measure: 62ch;
+  --content: 1180px;
+  --pad: 20px;
+}
+
+@media (min-width: 720px) {
+  :root { --pad: 40px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--void);
+  color: var(--starlight);
+  font-family: var(--prose);
+  font-size: var(--t-base);
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  /* Newsreader carries an optical-size axis: let it adapt to the rendered size. */
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+p { margin: 0 0 var(--s-4); max-width: var(--measure); }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; }
+
+/* The mono utility voice: labels, data, coordinates */
+.mono {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ice);
+  outline-offset: 3px;
+}
+
+::selection { background: var(--ice); color: var(--void); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--rule-bright); }
+::-webkit-scrollbar-thumb:hover { background: var(--ice); }
+
+.skip-link {
+  position: absolute;
+  left: var(--pad);
+  top: -4rem;
+  z-index: 100;
+  background: var(--panel);
+  border: 1px solid var(--ice);
+  color: var(--starlight);
+  padding: var(--s-2) var(--s-4);
+  font-family: var(--mono);
+  font-size: var(--t-sm);
+  text-decoration: none;
+  transition: top 160ms ease;
+}
+.skip-link:focus { top: var(--s-4); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
