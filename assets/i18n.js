@@ -65,6 +65,16 @@ export const translations = {
     'catalogue.spring-grimoire': 'A spellbook of skills and hooks for the Java and Spring ecosystem. The other four tools plug into it, which is why it sits at the centre of the chart.',
     'catalogue.conduit': 'DevTools for MCP, written in Rust. Intercept and read the traffic between AI clients and MCP servers while it happens.',
     'catalogue.gc-exorcist': 'Garbage collection log analysis with tuning recommendations and generated JVM flags. Covers JDK 8 to 21 and up, across G1, ZGC, Shenandoah and Parallel.',
+
+    'log.eyebrow': 'Observation log',
+    'log.title': 'Where the time went',
+    'log.now': 'now',
+    'log.role_lead': 'Team lead, development',
+    'log.body_lead': 'Leading a team of seven developers at a publisher of pharmaceutical source data in the Rhine-Main region. Responsible for roughly 25 systems in production, from Spring Boot services through Angular and Vaadin interfaces to the desktop tools the editorial staff work in. Most recently, putting LLMs into production processing pipelines.',
+    'log.role_dev': 'Software developer',
+    'log.body_dev': 'Joined the same company in June 2015. Java and Spring systems for capturing, validating and delivering medicinal product data, Oracle schemas, and JavaFX and Swing tools for editorial work.',
+    'log.role_uni': 'University of Duisburg-Essen',
+    'log.body_uni': 'Studied Applied Computer Science through to the M.Sc. Worked at the university for more than ten years alongside it: first as a student assistant, later as a research assistant across several chairs, running the Java tutorial groups. In parallel, first-level support for university IT.',
   },
   de: {
     'a11y.skip': 'Zum Inhalt springen',
@@ -130,6 +140,16 @@ export const translations = {
     'catalogue.spring-grimoire': 'Ein Zauberbuch aus Skills und Hooks für das Java- und Spring-Ökosystem. Die anderen vier Werkzeuge docken daran an, deshalb steht es im Zentrum der Karte.',
     'catalogue.conduit': 'DevTools für MCP, in Rust geschrieben. Den Verkehr zwischen KI-Clients und MCP-Servern mitlesen, während er läuft.',
     'catalogue.gc-exorcist': 'Analyse von GC-Logs mit Tuning-Empfehlungen und erzeugten JVM-Flags. Deckt JDK 8 bis 21 und aufwärts ab, für G1, ZGC, Shenandoah und Parallel.',
+
+    'log.eyebrow': 'Logbuch',
+    'log.title': 'Wohin die Zeit ging',
+    'log.now': 'heute',
+    'log.role_lead': 'Teamleiter Entwicklung',
+    'log.body_lead': 'Leitung eines Teams von sieben Entwicklern bei einem Herausgeber pharmazeutischer Rohdaten im Rhein-Main-Gebiet. Verantwortung für rund 25 Systeme im Produktivbetrieb, von Spring-Boot-Diensten über Angular- und Vaadin-Oberflächen bis zu den Desktop-Werkzeugen der Redaktion. Zuletzt die Integration von LLMs in produktive Verarbeitungsstrecken.',
+    'log.role_dev': 'Softwareentwickler',
+    'log.body_dev': 'Einstieg im Juni 2015 im selben Haus. Java- und Spring-Systeme für Erfassung, Prüfung und Auslieferung von Arzneimitteldaten, Oracle-Schemata sowie JavaFX- und Swing-Werkzeuge für die redaktionelle Arbeit.',
+    'log.role_uni': 'Universität Duisburg-Essen',
+    'log.body_uni': 'Studium der Angewandten Informatik bis zum M.Sc. Über zehn Jahre parallel an der Hochschule: erst als studentische, später als wissenschaftliche Hilfskraft an mehreren Lehrstühlen, mit Leitung der Java-Übungsgruppen. Daneben im First-Level-Support der Universitäts-IT.',
   },
 };
 

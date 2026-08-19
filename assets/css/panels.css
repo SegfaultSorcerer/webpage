@@ -46,3 +46,50 @@
   color: var(--parchment);
   line-height: 1.9;
 }
+
+/* ── Observation log ── */
+
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.log__entry {
+  display: grid;
+  gap: var(--s-2);
+  padding: 0 0 var(--s-12) var(--s-8);
+  border-left: 1px solid var(--rule);
+  position: relative;
+}
+.log__entry:last-child { padding-bottom: 0; border-left-color: transparent; }
+
+.log__entry::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0.55em;
+  width: 7px; height: 7px;
+  background: var(--ice);
+  transform: rotate(45deg);
+}
+
+@media (min-width: 820px) {
+  .log__entry {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: var(--s-8);
+    align-items: start;
+  }
+}
+
+.log__when { color: var(--ember); letter-spacing: 0.16em; }
+
+.log__role {
+  font-family: var(--display);
+  font-size: var(--t-md);
+  color: var(--parchment);
+  margin-bottom: var(--s-2);
+}
+
+.log__body p { color: var(--starlight); opacity: 0.82; font-size: var(--t-sm); }
