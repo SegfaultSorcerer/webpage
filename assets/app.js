@@ -4,6 +4,7 @@
  */
 
 import { initLanguage } from './i18n.js';
+import { initStarfield } from './starfield.js';
 
 const SECTION_IDS = ['observer', 'instruments', 'catalogue', 'log', 'transmissions'];
 
@@ -80,6 +81,7 @@ function initActiveSection() {
 
 function boot() {
   initLanguage();
+  initStarfield(document.getElementById('starfield'));
   initTopbar();
   initMobileMenu();
   initScrollReveal();
