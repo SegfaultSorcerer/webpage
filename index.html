@@ -261,7 +261,23 @@
         </ol>
       </div>
     </section>
-    <!-- Task 9 inserts #transmissions here -->
+    <section id="transmissions" class="plate">
+      <div class="container">
+        <header class="plate__head reveal">
+          <span class="eyebrow" data-i18n="transmissions.eyebrow">Transmissions</span>
+          <h2 class="plate__title" data-i18n="transmissions.title">Everything else on the profile</h2>
+          <p class="plate__lead" data-i18n="transmissions.lead">Public repositories, read live from the GitHub API and sorted by most recent activity.</p>
+        </header>
+
+        <div class="feed" id="feed">
+          <p class="feed__status mono" data-i18n="transmissions.loading">Reading the catalogue...</p>
+        </div>
+
+        <p class="feed__foot">
+          <a class="btn" href="https://github.com/SegfaultSorcerer" target="_blank" rel="noopener" data-i18n="transmissions.profile">Full profile on GitHub</a>
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">

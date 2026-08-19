@@ -3,9 +3,9 @@
  * Sections are wired in by later modules.
  */
 
-import { initLanguage } from './i18n.js';
+import { initLanguage, translations, currentLang, onLanguageChange } from './i18n.js';
 import { initStarfield } from './starfield.js';
-import { experienceYears } from './lib.js';
+import { experienceYears, visibleRepos, spectralColor, formatMonthYear, escapeHtml, translate } from './lib.js';
 import { fetchRepos } from './github.js';
 import { initCatalogue } from './catalogue.js';
 
@@ -98,15 +98,60 @@ function initFacts() {
   if (slot) slot.textContent = String(experienceYears());
 }
 
+function renderTransmissions(container, repos, lang) {
+  if (!container) return;
+
+  if (repos === null) {
+    container.innerHTML = `<p class="feed__status mono">${escapeHtml(translate(translations, lang, 'transmissions.error'))}</p>`;
+    return;
+  }
+
+  const shown = visibleRepos(repos);
+  if (!shown.length) {
+    container.innerHTML = `<p class="feed__status mono">${escapeHtml(translate(translations, lang, 'transmissions.empty'))}</p>`;
+    return;
+  }
+
+  const starsLabel = translate(translations, lang, 'transmissions.stars');
+
+  container.innerHTML = shown.map((repo) => `
+    <a class="feed__item" href="${escapeHtml(repo.url)}" target="_blank" rel="noopener">
+      <span class="feed__name">${escapeHtml(repo.name)}</span>
+      <p class="feed__desc">${escapeHtml(repo.description)}</p>
+      <span class="feed__meta">
+        <i style="--c:${spectralColor(repo.language)}"></i>
+        <span>${escapeHtml(repo.language || '')}</span>
+        <span>${repo.stars} ${escapeHtml(starsLabel)}</span>
+        <span>${escapeHtml(formatMonthYear(repo.updatedAt, lang))}</span>
+      </span>
+    </a>
+  `).join('');
+}
+
+function renderRepoCount(repos) {
+  const slot = document.querySelector('[data-fact="repos"]');
+  const cell = document.querySelector('[data-fact-slot="repos"]');
+  if (!slot || !cell || !repos) return;
+  slot.textContent = String(visibleRepos(repos).length);
+  cell.hidden = false;
+}
+
 async function initData() {
   const catalogueRoot = document.getElementById('catalogue-root');
+  const feed = document.getElementById('feed');
+
   let repos = null;
   try {
     repos = await fetchRepos();
   } catch (error) {
     console.warn('GitHub unavailable, falling back to static catalogue data.', error);
   }
+
   initCatalogue(catalogueRoot, repos);
+  renderTransmissions(feed, repos, currentLang());
+  renderRepoCount(repos);
+
+  onLanguageChange((lang) => renderTransmissions(feed, repos, lang));
 }
 
 function boot() {

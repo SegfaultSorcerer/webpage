@@ -75,6 +75,15 @@ export const translations = {
     'log.body_dev': 'Joined the same company in June 2015. Java and Spring systems for capturing, validating and delivering medicinal product data, Oracle schemas, and JavaFX and Swing tools for editorial work.',
     'log.role_uni': 'University of Duisburg-Essen',
     'log.body_uni': 'Studied Applied Computer Science through to the M.Sc. Worked at the university for more than ten years alongside it: first as a student assistant, later as a research assistant across several chairs, running the Java tutorial groups. In parallel, first-level support for university IT.',
+
+    'transmissions.eyebrow': 'Transmissions',
+    'transmissions.title': 'Everything else on the profile',
+    'transmissions.lead': 'Public repositories, read live from the GitHub API and sorted by most recent activity.',
+    'transmissions.loading': 'Reading the catalogue...',
+    'transmissions.error': 'The catalogue is out of reach right now.',
+    'transmissions.empty': 'No public repositories to show.',
+    'transmissions.profile': 'Full profile on GitHub',
+    'transmissions.stars': 'stars',
   },
   de: {
     'a11y.skip': 'Zum Inhalt springen',
@@ -150,6 +159,15 @@ export const translations = {
     'log.body_dev': 'Einstieg im Juni 2015 im selben Haus. Java- und Spring-Systeme für Erfassung, Prüfung und Auslieferung von Arzneimitteldaten, Oracle-Schemata sowie JavaFX- und Swing-Werkzeuge für die redaktionelle Arbeit.',
     'log.role_uni': 'Universität Duisburg-Essen',
     'log.body_uni': 'Studium der Angewandten Informatik bis zum M.Sc. Über zehn Jahre parallel an der Hochschule: erst als studentische, später als wissenschaftliche Hilfskraft an mehreren Lehrstühlen, mit Leitung der Java-Übungsgruppen. Daneben im First-Level-Support der Universitäts-IT.',
+
+    'transmissions.eyebrow': 'Signale',
+    'transmissions.title': 'Alles Weitere auf dem Profil',
+    'transmissions.lead': 'Öffentliche Repositories, live über die GitHub-API gelesen und nach letzter Aktivität sortiert.',
+    'transmissions.loading': 'Katalog wird gelesen ...',
+    'transmissions.error': 'Der Katalog ist gerade nicht erreichbar.',
+    'transmissions.empty': 'Keine öffentlichen Repositories vorhanden.',
+    'transmissions.profile': 'Vollständiges Profil auf GitHub',
+    'transmissions.stars': 'Sterne',
   },
 };
 
