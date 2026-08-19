@@ -3,6 +3,8 @@
  * Sections are wired in by later modules.
  */
 
+import { initLanguage } from './i18n.js';
+
 const SECTION_IDS = ['observer', 'instruments', 'catalogue', 'log', 'transmissions'];
 
 function initTopbar() {
@@ -77,6 +79,7 @@ function initActiveSection() {
 }
 
 function boot() {
+  initLanguage();
   initTopbar();
   initMobileMenu();
   initScrollReveal();
