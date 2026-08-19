@@ -49,6 +49,25 @@
   white-space: nowrap;
 }
 
+/* Below this width the six labels cannot sit under their ticks without
+   colliding (measured: overlap persists through 391px, clears by 393px),
+   so they become a wrapped legend instead. 480px gives a safety margin
+   above the measured threshold. */
+@media (max-width: 480px) {
+  .spectrum__labels {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-4);
+  }
+  .spectrum__labels li {
+    position: static;
+    left: auto;
+    transform: none;
+  }
+}
+
 .hero__line {
   font-size: var(--t-md);
   line-height: 1.5;
@@ -75,8 +94,8 @@
 .is-loaded .hero__name span:last-child { animation: rise 700ms 320ms ease forwards; }
 .is-loaded .spectrum { animation: fade 500ms 700ms ease forwards; }
 .is-loaded .spectrum__labels { animation: fade 500ms 1300ms ease forwards; }
-.is-loaded .hero__line { animation: rise 600ms 1300ms ease forwards; }
-.is-loaded .hero__actions { animation: rise 600ms 1450ms ease forwards; }
+.is-loaded .hero__line { animation: rise 600ms 1200ms ease forwards; }
+.is-loaded .hero__actions { animation: rise 600ms 1350ms ease forwards; }
 
 .is-loaded .spectrum__band {
   transform-origin: left center;
