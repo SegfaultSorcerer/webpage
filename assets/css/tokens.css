@@ -14,7 +14,7 @@
   --ember: #F2A65A;
 
   /* Type */
-  --display: 'Bodoni Moda', 'Times New Roman', serif;
+  --display: 'Newsreader', 'Times New Roman', serif;
   --prose: 'Spectral', Georgia, serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
@@ -72,7 +72,9 @@ body {
 h1, h2, h3 {
   font-family: var(--display);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  /* Newsreader carries an optical-size axis: let it adapt to the rendered size. */
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
   line-height: 1.05;
   margin: 0;
 }
