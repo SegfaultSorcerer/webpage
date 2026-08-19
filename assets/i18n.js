@@ -83,7 +83,8 @@ export const translations = {
     'transmissions.error': 'The catalogue is out of reach right now.',
     'transmissions.empty': 'No public repositories to show.',
     'transmissions.profile': 'Full profile on GitHub',
-    'transmissions.stars': 'stars',
+    'transmissions.star_one': 'star',
+    'transmissions.star_other': 'stars',
   },
   de: {
     'a11y.skip': 'Zum Inhalt springen',
@@ -167,7 +168,8 @@ export const translations = {
     'transmissions.error': 'Der Katalog ist gerade nicht erreichbar.',
     'transmissions.empty': 'Keine öffentlichen Repositories vorhanden.',
     'transmissions.profile': 'Vollständiges Profil auf GitHub',
-    'transmissions.stars': 'Sterne',
+    'transmissions.star_one': 'Stern',
+    'transmissions.star_other': 'Sterne',
   },
 };
 

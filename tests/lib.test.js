@@ -7,6 +7,7 @@ import {
   visibleRepos,
   formatMonthYear,
   escapeHtml,
+  safeUrl,
   translate,
   HIDDEN_REPOS,
   SPECTRAL_DEFAULT,
@@ -58,6 +59,17 @@ test('formatMonthYear renders a short month and year, or empty on garbage', () =
 test('escapeHtml neutralises markup', () => {
   assert.equal(escapeHtml('<img src=x onerror="a">'), '&lt;img src=x onerror=&quot;a&quot;&gt;');
   assert.equal(escapeHtml(null), '');
+});
+
+test('safeUrl only allows http(s) URLs through, everything else becomes #', () => {
+  assert.equal(safeUrl('https://github.com/SegfaultSorcerer/conduit'), 'https://github.com/SegfaultSorcerer/conduit');
+  assert.equal(safeUrl('http://example.com'), 'http://example.com');
+  assert.equal(safeUrl('javascript:alert(1)'), '#');
+  assert.equal(safeUrl('JaVaScRiPt:alert(1)'), '#');
+  assert.equal(safeUrl('  javascript:alert(1)'), '#');
+  assert.equal(safeUrl('data:text/html,<script>alert(1)</script>'), '#');
+  assert.equal(safeUrl(null), '#');
+  assert.equal(safeUrl(undefined), '#');
 });
 
 test('translate falls back to English, then to the key itself', () => {

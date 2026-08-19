@@ -61,6 +61,12 @@ export function formatMonthYear(iso, lang = 'en') {
   }).format(date);
 }
 
+/** Only http(s) URLs may reach an href. Anything else, including javascript:, becomes inert. */
+export function safeUrl(value) {
+  const url = String(value ?? '').trim();
+  return /^https?:\/\//i.test(url) ? url : '#';
+}
+
 const HTML_ENTITIES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
 
 /** Escape a value before it goes into innerHTML. */

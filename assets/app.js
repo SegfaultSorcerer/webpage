@@ -5,7 +5,7 @@
 
 import { initLanguage, translations, currentLang, onLanguageChange } from './i18n.js';
 import { initStarfield } from './starfield.js';
-import { experienceYears, visibleRepos, spectralColor, formatMonthYear, escapeHtml, translate } from './lib.js';
+import { experienceYears, visibleRepos, spectralColor, formatMonthYear, escapeHtml, safeUrl, translate } from './lib.js';
 import { fetchRepos } from './github.js';
 import { initCatalogue } from './catalogue.js';
 
@@ -112,10 +112,11 @@ function renderTransmissions(container, repos, lang) {
     return;
   }
 
-  const starsLabel = translate(translations, lang, 'transmissions.stars');
-
-  container.innerHTML = shown.map((repo) => `
-    <a class="feed__item" href="${escapeHtml(repo.url)}" target="_blank" rel="noopener">
+  container.innerHTML = shown.map((repo) => {
+    const starKey = repo.stars === 1 ? 'transmissions.star_one' : 'transmissions.star_other';
+    const starsLabel = translate(translations, lang, starKey);
+    return `
+    <a class="feed__item" href="${escapeHtml(safeUrl(repo.url))}" target="_blank" rel="noopener">
       <span class="feed__name">${escapeHtml(repo.name)}</span>
       <p class="feed__desc">${escapeHtml(repo.description)}</p>
       <span class="feed__meta">
@@ -125,7 +126,8 @@ function renderTransmissions(container, repos, lang) {
         <span>${escapeHtml(formatMonthYear(repo.updatedAt, lang))}</span>
       </span>
     </a>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function renderRepoCount(repos) {
