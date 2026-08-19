@@ -111,7 +111,7 @@
 .feed__item:hover { background: var(--panel); }
 @media (min-width: 820px) {
   .feed__item {
-    grid-template-columns: minmax(0, 260px) minmax(0, 1fr) 150px;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr) minmax(160px, max-content);
     gap: var(--s-6);
     align-items: baseline;
     padding-inline: var(--s-3);
@@ -128,11 +128,13 @@
 .feed__meta {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: var(--s-3);
   font-family: var(--mono);
   font-size: var(--t-xs);
   color: var(--dim);
   letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 .feed__meta i {
   width: 7px; height: 7px;

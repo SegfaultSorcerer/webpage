@@ -20,6 +20,13 @@
   <link rel="stylesheet" href="assets/css/panels.css">
 
   <script type="module" src="assets/app.js"></script>
+
+  <noscript>
+    <style>
+      .hero__eyebrow, .hero__name span, .spectrum, .spectrum__labels,
+      .hero__line, .hero__actions, .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 
 <body>
@@ -238,23 +245,23 @@
 
         <ol class="log">
           <li class="log__entry reveal">
-            <span class="log__when mono">2018 &ndash; <span data-i18n="log.now">now</span></span>
+            <span class="log__when mono" id="log-when-lead"><time datetime="2018">2018</time> &ndash; <span data-i18n="log.now">now</span></span>
             <div class="log__body">
-              <h3 class="log__role" data-i18n="log.role_lead">Team lead, development</h3>
+              <h3 class="log__role" data-i18n="log.role_lead" aria-describedby="log-when-lead">Team lead, development</h3>
               <p data-i18n="log.body_lead">Leading a team of seven developers at a publisher of pharmaceutical source data in the Rhine-Main region. Responsible for roughly 25 systems in production, from Spring Boot services through Angular and Vaadin interfaces to the desktop tools the editorial staff work in. Most recently, putting LLMs into production processing pipelines.</p>
             </div>
           </li>
           <li class="log__entry reveal">
-            <span class="log__when mono">2015 &ndash; 2018</span>
+            <span class="log__when mono" id="log-when-dev"><time datetime="2015">2015</time> &ndash; <time datetime="2018">2018</time></span>
             <div class="log__body">
-              <h3 class="log__role" data-i18n="log.role_dev">Software developer</h3>
+              <h3 class="log__role" data-i18n="log.role_dev" aria-describedby="log-when-dev">Software developer</h3>
               <p data-i18n="log.body_dev">Joined the same company in June 2015. Java and Spring systems for capturing, validating and delivering medicinal product data, Oracle schemas, and JavaFX and Swing tools for editorial work.</p>
             </div>
           </li>
           <li class="log__entry reveal">
-            <span class="log__when mono">2005 &ndash; 2015</span>
+            <span class="log__when mono" id="log-when-uni"><time datetime="2005">2005</time> &ndash; <time datetime="2015">2015</time></span>
             <div class="log__body">
-              <h3 class="log__role" data-i18n="log.role_uni">University of Duisburg-Essen</h3>
+              <h3 class="log__role" data-i18n="log.role_uni" aria-describedby="log-when-uni">University of Duisburg-Essen</h3>
               <p data-i18n="log.body_uni">Studied Applied Computer Science through to the M.Sc. Worked at the university for more than ten years alongside it: first as a student assistant, later as a research assistant across several chairs, running the Java tutorial groups. In parallel, first-level support for university IT.</p>
             </div>
           </li>

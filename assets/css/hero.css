@@ -128,6 +128,8 @@
   .hero__actions,
   .spectrum__line,
   .spectrum__ticks { opacity: 1 !important; }
+
+  .spectrum__band { transform: none !important; }
 }
 
 /* ── Facts bar ── */
