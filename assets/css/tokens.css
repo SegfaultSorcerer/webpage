@@ -50,6 +50,9 @@
   --measure: 62ch;
   --content: 1180px;
   --pad: 20px;
+  /* The label axis. Plate designations, instrument categories and log dates
+     all hang off this one column so the labels line up down the page. */
+  --axis: 200px;
 }
 
 @media (min-width: 720px) {

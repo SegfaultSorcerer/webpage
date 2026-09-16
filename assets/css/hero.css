@@ -9,9 +9,11 @@
 
 .hero__inner { width: 100%; }
 
-.hero__eyebrow {
+/* Reads as the data line under a plate, not as a kicker over a headline:
+   the name takes the first viewport, the coordinates caption it. */
+.hero__coords {
   color: var(--dim);
-  margin: 0 0 var(--s-6);
+  margin: 0 0 var(--s-8);
   max-width: none;
 }
 
@@ -21,7 +23,7 @@
   font-size: clamp(3rem, 13vw, var(--t-3xl));
   font-weight: 700;
   color: var(--starlight);
-  margin-bottom: var(--s-8);
+  margin-bottom: var(--s-4);
 }
 .hero__name span { display: block; }
 
@@ -84,14 +86,14 @@
 
 /* ── Load sequence ── */
 
-.hero__eyebrow,
+.hero__coords,
 .hero__name span,
 .spectrum,
 .spectrum__labels,
 .hero__line,
 .hero__actions { opacity: 0; }
 
-.is-loaded .hero__eyebrow { animation: rise 600ms 600ms ease forwards; }
+.is-loaded .hero__coords { animation: rise 600ms 600ms ease forwards; }
 .is-loaded .hero__name span:first-child { animation: rise 700ms 200ms ease forwards; }
 .is-loaded .hero__name span:last-child { animation: rise 700ms 320ms ease forwards; }
 .is-loaded .spectrum { animation: fade 500ms 700ms ease forwards; }
@@ -122,7 +124,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__eyebrow,
+  .hero__coords,
   .hero__name span,
   .spectrum,
   .spectrum__labels,

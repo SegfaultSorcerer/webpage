@@ -23,7 +23,7 @@
 
   <noscript>
     <style>
-      .hero__eyebrow, .hero__name span, .spectrum, .spectrum__labels,
+      .hero__coords, .hero__name span, .spectrum, .spectrum__labels,
       .hero__line, .hero__actions, .reveal { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
@@ -72,12 +72,12 @@
     <span id="top"></span>
     <section id="hero" class="hero">
       <div class="container hero__inner">
-        <p class="hero__eyebrow mono" data-i18n="hero.eyebrow">Segfaultsorcerer &middot; Frankfurt am Main &middot; 50.11&deg;N 8.68&deg;E</p>
-
         <h1 class="hero__name">
           <span>Patrik</span>
           <span>Neumann</span>
         </h1>
+
+        <p class="hero__coords mono" data-i18n="hero.eyebrow">Segfaultsorcerer &middot; Frankfurt am Main &middot; 50.11&deg;N 8.68&deg;E</p>
 
         <div class="spectrum" role="img" data-i18n-label="hero.spectrum_alt" aria-label="Spectral analysis showing Java, Spring, JVM, Oracle, Angular and AI as absorption lines">
           <svg viewBox="0 0 1000 84" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -151,11 +151,11 @@
     <section id="observer" class="plate">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="observer.eyebrow">Observer</span>
           <h2 class="plate__title" data-i18n="observer.title">Who is looking through the instrument</h2>
+          <span class="plate__designation" data-i18n="observer.eyebrow">Observer</span>
         </header>
 
-        <div class="observer">
+        <div class="observer plate__body">
           <div class="observer__prose reveal">
             <p data-i18n="observer.p1">I am a senior full-stack developer and development team lead near Frankfurt am Main, with a Master's degree in Applied Computer Science from the University of Duisburg-Essen. My working life is the Java and Spring ecosystem: microservice architectures, large Oracle schemas and full-stack applications that carry critical business functions in the pharmaceutical industry.</p>
             <p data-i18n="observer.p2">What holds my attention is the point where ordinary software engineering meets machine learning. I put LLMs and document-processing models into production pipelines, not as experiments but as tested components with clear failure modes, using Spring AI alongside the tooling that Claude and Codex have made practical.</p>
@@ -178,8 +178,8 @@
     <section id="instruments" class="plate plate--alt">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="instruments.eyebrow">Instruments</span>
           <h2 class="plate__title" data-i18n="instruments.title">What I work with</h2>
+          <span class="plate__designation" data-i18n="instruments.eyebrow">Instruments</span>
         </header>
 
         <div class="instruments reveal">
@@ -213,12 +213,12 @@
     <section id="catalogue" class="plate">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="catalogue.eyebrow">Catalogue</span>
           <h2 class="plate__title" data-i18n="catalogue.title">Five instruments for reading the dead</h2>
+          <span class="plate__designation" data-i18n="catalogue.eyebrow">Catalogue</span>
           <p class="plate__lead" data-i18n="catalogue.lead">Open-source tooling for JVM forensics, published as SegfaultSorcerer. Star size on the chart is the repository's GitHub star count; star colour is its main language.</p>
         </header>
 
-        <div class="catalogue reveal" id="catalogue-root">
+        <div class="catalogue plate__body reveal" id="catalogue-root">
           <figure class="chart">
             <div class="chart__plot" role="group" data-i18n-label="catalogue.chart_alt" aria-label="Star chart of five open-source tools">
               <svg class="chart__svg" viewBox="0 0 100 72" aria-hidden="true" focusable="false">
@@ -241,8 +241,8 @@
     <section id="log" class="plate plate--alt">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="log.eyebrow">Observation log</span>
           <h2 class="plate__title" data-i18n="log.title">Where the time went</h2>
+          <span class="plate__designation" data-i18n="log.eyebrow">Observation log</span>
         </header>
 
         <ol class="log">
@@ -273,16 +273,16 @@
     <section id="transmissions" class="plate">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="transmissions.eyebrow">Transmissions</span>
           <h2 class="plate__title" data-i18n="transmissions.title">Everything else on the profile</h2>
+          <span class="plate__designation" data-i18n="transmissions.eyebrow">Transmissions</span>
           <p class="plate__lead" data-i18n="transmissions.lead">Public repositories, read live from the GitHub API and sorted by most recent activity.</p>
         </header>
 
-        <div class="feed" id="feed">
+        <div class="feed plate__body" id="feed">
           <p class="feed__status mono" data-i18n="transmissions.loading">Reading the catalogue...</p>
         </div>
 
-        <p class="feed__foot">
+        <p class="feed__foot plate__body">
           <a class="btn" href="https://github.com/SegfaultSorcerer" target="_blank" rel="noopener" data-i18n="transmissions.profile" data-i18n-label="transmissions.profile_a11y" aria-label="Full profile on GitHub, opens in a new tab">Full profile on GitHub</a>
         </p>
       </div>

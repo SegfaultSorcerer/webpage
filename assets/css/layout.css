@@ -151,14 +151,36 @@
 
 .plate__head { margin-bottom: var(--s-12); }
 
-.eyebrow {
+/* From 900px the designation moves into the label axis beside the heading,
+   the same column the instruments table and the observation log hang off.
+   Below that it sits above the heading, exactly as the log dates do. */
+@media (min-width: 900px) {
+  .plate__head {
+    display: grid;
+    grid-template-columns: var(--axis) minmax(0, 1fr);
+    column-gap: var(--s-8);
+    align-items: baseline;
+  }
+  .plate__designation { grid-column: 1; grid-row: 1; margin-top: 0; }
+  .plate__title { grid-column: 2; grid-row: 1; }
+  .plate__lead { grid-column: 2; grid-row: 2; }
+
+  /* Instruments and the log carry the axis inside their own rows, so they stay
+     at the container edge. Everything else shifts into the content column, and
+     the page then holds two verticals from top to bottom: labels, then content. */
+  .plate__body { margin-left: calc(var(--axis) + var(--s-8)); }
+}
+
+/* Below 900px it reads as a caption under the heading, the same way the hero
+   coordinates caption the name. It is never stacked above a heading. */
+.plate__designation {
   display: block;
   font-family: var(--mono);
   font-size: var(--t-xs);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ice);
-  margin-bottom: var(--s-3);
+  margin-top: var(--s-3);
 }
 
 .plate__title {

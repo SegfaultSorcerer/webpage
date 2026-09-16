@@ -99,7 +99,7 @@ components:
     backgroundColor: "transparent"
     textColor: "{colors.ice}"
     rounded: "{rounded.none}"
-  eyebrow:
+  plate-designation:
     backgroundColor: "transparent"
     textColor: "{colors.ice}"
     typography: "{typography.label}"
@@ -150,7 +150,7 @@ A near-black field with a blue cast, two spectral accents, and a warm parchment 
 
 ### Primary
 
-- **B-Class Ice** (#8FC7FF): The live, interactive, machine-read signal. It marks every eyebrow, the current nav item, the monogram, repository names in the feed, the instrument category labels, catalogue designations, and the focus ring. When something on this page is a link, is currently active, or came from an API a moment ago, it is ice. Derived from B-class stellar colour.
+- **B-Class Ice** (#8FC7FF): The live, interactive, machine-read signal. It marks every plate designation, the current nav item, the monogram, repository names in the feed, the instrument category labels, catalogue designations, and the focus ring. When something on this page is a link, is currently active, or came from an API a moment ago, it is ice. Derived from B-class stellar colour.
 
 ### Secondary
 
@@ -192,10 +192,10 @@ The language encoding, used only as data on the catalogue chart and in the feed'
 ### Hierarchy
 
 - **Display** (700, `clamp(3rem, 13vw, 7rem)`, 1.05, -0.015em): The name in the hero. Set as two stacked blocks, one word per line. This is the only place display size is used.
-- **Headline** (600, 2.75rem desktop / 1.75rem below 900px, 1.05): Plate titles. Always parchment, always preceded by an ice eyebrow.
+- **Headline** (600, 2.75rem desktop / 1.75rem below 900px, 1.05): Plate titles. Always parchment, and always first — nothing is set above a heading.
 - **Title** (600, 1.25rem, 1.05): Log entry roles, and at 1.75rem the figures in the facts bar.
 - **Body** (300, 1rem, 1.7): All prose, capped at a 62ch measure. Set in Spectral at weight 300 — the light weight is load-bearing, not incidental; it keeps long passages quiet against the void.
-- **Label** (500, 0.6875rem, 0.18em, uppercase): Every mono label, coordinate, designation and caption. Eyebrows widen to 0.28em; the monogram and footer mark to 0.22em.
+- **Label** (500, 0.6875rem, 0.18em, uppercase): Every mono label, coordinate, designation and caption. Plate designations widen to 0.28em; the monogram and footer mark to 0.22em.
 - **Control** (500, 0.8125rem, 0.12em, uppercase): Buttons, mobile nav items, feed repository names, the skip link.
 
 ### Named Rules
@@ -210,15 +210,15 @@ A single centred column, 1180px maximum, with 20px side padding below 720px and 
 
 The vertical rhythm is deliberately large: plates are 6rem tall in padding on mobile and 10rem on desktop, with 3rem between a plate's heading block and its content. Spacing is a 4px scale (0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4 / 6 / 10rem); no value outside it appears.
 
-Two-column sections — Observer and Catalogue — use a 3fr/2fr split, never an even one, with the prose or the chart on the left and a hairline-separated data panel on the right. Both collapse to a single column at 900px, where the panel's left border becomes a top border. The instruments table and the log use a fixed-width first column (180px and 200px) against a fluid second, so labels form a true vertical axis.
+Two-column sections — Observer and Catalogue — use a 3fr/2fr split, never an even one, with the prose or the chart on the left and a hairline-separated data panel on the right. Both collapse to a single column at 1100px, where the panel's left border becomes a top border. The split waits until 1100px because these bodies start in the content column: splitting at 900px left the prose at 39ch. A single label axis (`--axis`, 200px) runs down the page: plate designations, instrument categories and log dates all hang off it, against a fluid content column. From 900px a plate's designation sits in that axis beside its heading; below 900px it drops underneath the heading as a caption.
 
-Breakpoints, in the order they actually fire: 480px (hero spectrum labels rewrap as a legend), 640px (facts bar goes two-up), 720px (padding widens, instruments table splits), 820px (log and feed rows split), 900px (nav appears, two-column sections split, rhythm opens up), 960px (facts bar goes four-up).
+Breakpoints, in the order they actually fire: 480px (hero spectrum labels rewrap as a legend), 640px (facts bar goes two-up), 720px (padding widens, instruments table splits), 820px (log and feed rows split), 900px (nav appears, the label axis engages, rhythm opens up), 960px (facts bar goes four-up), 1100px (Observer and Catalogue split into two columns).
 
 ### Named Rules
 
 **The Asymmetric Pair Rule.** Paired columns are 3fr/2fr. A 50/50 split reads as a web layout; an uneven one reads as a plate with a margin note, which is what these sections are.
 
-**The Fixed-Axis Rule.** Where rows carry a label and a value, the label column is a fixed pixel width so the labels align into a visible axis. Fluid label columns destroy the instrument-panel read.
+**The Fixed-Axis Rule.** Where an element carries a label and a value, the label sits in the `--axis` column (200px) so labels align into one visible axis down the page. Fluid label columns destroy the instrument-panel read, and a second axis width would destroy the alignment.
 
 ## Elevation & Depth
 
@@ -289,7 +289,7 @@ The system's defining component and the reason for the whole world. Five tools p
 
 An inline SVG absorption spectrum standing in for a skills list. A continuum band runs blue to red across six stops; six absorption lines fall at the positions of six labelled technologies. The band is `aria-hidden` with the technology list carried as real text beneath.
 
-Its load sequence is the page's one orchestrated moment, roughly 1.6s end to end: name rises line by line (200–320ms), eyebrow (600ms), band wipes from the left on a 420ms `cubic-bezier(0.2, 0.8, 0.2, 1)` (700ms), absorption lines drop in staggered 60ms apart (from 1000ms), then labels, thesis and actions (1200–1350ms). Below 480px the labels abandon their tick positions and rewrap as a flex legend, because six labels cannot clear each other under 393px.
+Its load sequence is the page's one orchestrated moment, roughly 1.6s end to end: name rises line by line (200–320ms), coordinates (600ms), band wipes from the left on a 420ms `cubic-bezier(0.2, 0.8, 0.2, 1)` (700ms), absorption lines drop in staggered 60ms apart (from 1000ms), then labels, thesis and actions (1200–1350ms). Below 480px the labels abandon their tick positions and rewrap as a flex legend, because six labels cannot clear each other under 393px.
 
 ## Do's and Don'ts
 
@@ -303,6 +303,7 @@ Its load sequence is the page's one orchestrated moment, roughly 1.6s end to end
 - **Do** make anything derived from live data survive the API being unreachable, with a stated fallback — star radii fall back to 5px, the feed falls back to a calm line and a profile link.
 - **Do** disable every animation, including the starfield drift, under `prefers-reduced-motion: reduce`, and keep all content visible without JavaScript.
 - **Do** state the mapping whenever a visual property encodes data, as the catalogue legend does with "Size = GitHub stars".
+- **Do** put the heading first and hang its designation in the `--axis` column beside it, or beneath it as a caption below 900px.
 
 ### Don't:
 
@@ -314,4 +315,5 @@ Its load sequence is the page's one orchestrated moment, roughly 1.6s end to end
 - **Don't** spend ember on anything but human time: the hero thesis rule and the log dates.
 - **Don't** use pure black (#000) or pure white (#FFF). The ground is void (#04060C); text is starlight (#E6E9F2) or parchment (#CFC5AE).
 - **Don't** wrap a list of rows in cards when hairlines between them will do.
+- **Don't** set a tracked-caps label above a heading. The heading comes first in the markup and on the page; a designation belongs in the margin axis or under the heading, never stacked over it.
 - **Don't** animate anything that is not carrying information. The page gets one orchestrated moment at load and then holds still.
