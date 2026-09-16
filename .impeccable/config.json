@@ -56,6 +56,24 @@
         ],
         "createdAt": "2026-09-16T09:51:14.752Z",
         "reason": "Same catalogue chart graph paper as the catalogue.css entry; the detector attributes the rendered page to index.html. Plot area behind real plotted data, recorded in DESIGN.md under Shapes."
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "assets/css/*.css"
+        ],
+        "createdAt": "2026-09-16T10:22:57.865Z",
+        "reason": "Verified false positive: the CSS holds 0 U+2014 em-dashes. The count comes from 191 U+2500 box-drawing characters in the section-header comments (/* -- Catalogue constellation -- */), which are the project's incumbent comment style, not body text. Page copy contains exactly one em-dash, quoted verbatim from a tool README."
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T10:23:14.010Z",
+        "reason": "Verified false positive: the detector renders the page and counts 55 em-dashes in body text, but index.html contains exactly one (quoted verbatim from a tool README) and i18n.js none. The count comes from 191 U+2500 box-drawing characters in the CSS section-header comments, the project's incumbent comment style."
       }
     ]
   }
