@@ -235,7 +235,26 @@
           </figure>
 
           <div class="entry" id="catalogue-entry" aria-live="polite"></div>
+          <ol class="catalogue__list"></ol>
         </div>
+
+        <figure class="specimen plate__body reveal">
+          <figcaption class="specimen__caption mono" id="specimen-caption" data-i18n="catalogue.specimen">Specimen &middot; thread-necromancer, reading a thread dump</figcaption>
+          <pre class="specimen__body" tabindex="0" aria-labelledby="specimen-caption">## Thread Dump Analysis Report
+
+### Thread State Distribution
+| State         | Count | Percentage | Assessment           |
+|---------------|-------|------------|----------------------|
+| RUNNABLE      | 23    | 9.3%       | Healthy              |
+| WAITING       | 147   | 59.5%      | High &mdash; check below   |
+| BLOCKED       | 32    | 13.0%      | Contention!          |
+
+### Contention Hotspots
+| Severity | Lock / Monitor             | Waiting | Holder  |
+|----------|----------------------------|---------|---------|
+| CRITICAL | HikariPool.getConnection   | 147     | exec-42 |
+| CRITICAL | LegacyService.synchronized | 23      | exec-17 |</pre>
+        </figure>
       </div>
     </section>
     <section id="log" class="plate plate--alt">

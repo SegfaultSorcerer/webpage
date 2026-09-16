@@ -140,3 +140,74 @@
   margin-bottom: var(--s-4);
 }
 .entry__text { color: var(--parchment); font-size: var(--t-sm); margin-bottom: var(--s-4); }
+
+.entry__get {
+  display: grid;
+  gap: var(--s-1);
+  margin-bottom: var(--s-4);
+}
+.entry__get-label { color: var(--dim); }
+.entry__get-line {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: var(--ice);
+  overflow-wrap: anywhere;
+}
+
+/* ── Touch listing ── */
+
+/* A tap on a star opens the repository, so the hover panel can only be read
+   after the visitor has already committed. Coarse pointers get every entry
+   listed under the chart instead. */
+.catalogue__list { display: none; }
+
+@media (pointer: coarse) {
+  .catalogue { grid-template-columns: minmax(0, 1fr); }
+  .entry { display: none; }
+
+  .catalogue__list {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .catalogue__item {
+    padding: var(--s-6) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+/* ── Specimen ── */
+
+/* Real output from one of the tools. The catalogue says what the instruments
+   do; this shows it, which is the only version a reader can check. */
+.specimen {
+  /* Sized to its specimen, not to the column: an engraved plate is cut to
+     what is on it. max-width keeps it inside the column when the output is wide. */
+  width: max-content;
+  max-width: 100%;
+  margin: var(--s-12) 0 0;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  padding: var(--s-4) var(--s-6) var(--s-6);
+}
+
+.specimen__caption {
+  color: var(--dim);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--s-4);
+}
+
+.specimen__body {
+  margin: 0;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  line-height: 1.7;
+  color: var(--parchment);
+  white-space: pre;
+}
+.specimen__body:focus-visible { outline: 2px solid var(--ice); outline-offset: 4px; }
