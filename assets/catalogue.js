@@ -23,6 +23,8 @@ const EDGES = [
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const FALLBACK_RADIUS = 5;
+/** Height of the chart's coordinate space, for turning tool.y into a percentage. */
+const CHART_HEIGHT = 72;
 
 function byName(name) {
   return TOOLS.find((tool) => tool.name === name);
@@ -34,11 +36,15 @@ function starWord(lang, count) {
   return translate(translations, lang, key);
 }
 
-/** Accessible name for a chart star: "name, N star(s)" in the current language. */
+/**
+ * Accessible name for a chart star: "name, N star(s), opens in a new tab".
+ * This is the star's whole name, so the visible label must not be read again.
+ */
 function chartTitleText(tool, count) {
-  if (count === null) return tool.name;
   const lang = currentLang();
-  return `${tool.name}, ${count} ${starWord(lang, count)}`;
+  const newTab = translate(translations, lang, 'a11y.new_tab');
+  if (count === null) return `${tool.name}, ${newTab}`;
+  return `${tool.name}, ${count} ${starWord(lang, count)}, ${newTab}`;
 }
 
 /** name -> license (SPDX id or null), for the entry panel. */
@@ -50,16 +56,16 @@ function licensesByName(repos) {
 
 export function initCatalogue(root, repos) {
   if (!root) return;
-  const svg = root.querySelector('.chart__svg');
+  const plot = root.querySelector('.chart__plot');
   const lineLayer = root.querySelector('.chart__lines');
   const starLayer = root.querySelector('.chart__stars');
   const entry = root.querySelector('.entry');
-  if (!svg || !lineLayer || !starLayer || !entry) return;
+  if (!plot || !lineLayer || !starLayer || !entry) return;
 
   const stars = starsByName(repos);
   const licenses = licensesByName(repos);
   const hasData = stars.size > 0;
-  const titles = [];
+  const named = [];
 
   EDGES.forEach(([fromName, toName]) => {
     const from = byName(fromName);
@@ -76,43 +82,38 @@ export function initCatalogue(root, repos) {
   TOOLS.forEach((tool) => {
     const count = hasData ? (stars.get(tool.name) ?? 0) : null;
     const licence = licenses.get(tool.name) ?? null;
-    // Chart units are 1/10 of a px at the reference size, so scale radius down.
-    const radius = count === null ? FALLBACK_RADIUS / 6 : starRadius(count) / 6;
+    // Radius is in real pixels: it encodes the star count, so it stays the same
+    // size at every viewport instead of shrinking with the chart.
+    const radius = count === null ? FALLBACK_RADIUS : starRadius(count);
     const colour = spectralColor(tool.language);
 
-    const link = document.createElementNS(SVG_NS, 'a');
-    link.setAttribute('href', tool.url);
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener');
-    link.setAttribute('class', 'chart__star');
+    const link = document.createElement('a');
+    link.className = 'chart__star';
+    link.href = tool.url;
+    link.target = '_blank';
+    link.rel = 'noopener';
     link.dataset.tool = tool.name;
+    link.style.setProperty('--x', `${tool.x}%`);
+    link.style.setProperty('--y', `${(tool.y / CHART_HEIGHT) * 100}%`);
+    link.style.setProperty('--r', `${radius}px`);
+    link.style.setProperty('--c', colour);
+    link.setAttribute('aria-label', chartTitleText(tool, count));
+    named.push({ el: link, tool, count });
 
-    const halo = document.createElementNS(SVG_NS, 'circle');
-    halo.setAttribute('class', 'chart__halo');
-    halo.setAttribute('cx', tool.x);
-    halo.setAttribute('cy', tool.y);
-    halo.setAttribute('r', radius * 3);
-    halo.setAttribute('fill', colour);
+    const halo = document.createElement('span');
+    halo.className = 'chart__halo';
 
-    const disc = document.createElementNS(SVG_NS, 'circle');
-    disc.setAttribute('class', 'chart__disc');
-    disc.setAttribute('cx', tool.x);
-    disc.setAttribute('cy', tool.y);
-    disc.setAttribute('r', radius);
-    disc.setAttribute('fill', colour);
+    const disc = document.createElement('span');
+    disc.className = 'chart__disc';
 
-    const label = document.createElementNS(SVG_NS, 'text');
-    label.setAttribute('class', 'chart__label');
-    label.setAttribute('x', tool.x);
-    label.setAttribute('y', tool.y + radius + 3.6);
-    label.setAttribute('text-anchor', 'middle');
+    const label = document.createElement('span');
+    label.className = 'chart__label';
     label.textContent = tool.name;
+    // The link's aria-label already carries the name; without this the label
+    // would be appended to it and every star would announce its name twice.
+    label.setAttribute('aria-hidden', 'true');
 
-    const title = document.createElementNS(SVG_NS, 'title');
-    title.textContent = chartTitleText(tool, count);
-    titles.push({ el: title, tool, count });
-
-    link.append(title, halo, disc, label);
+    link.append(halo, disc, label);
     starLayer.appendChild(link);
 
     const show = () => renderEntry(entry, tool, count, licence);
@@ -123,12 +124,12 @@ export function initCatalogue(root, repos) {
   renderIntro(entry);
   onLanguageChange(() => {
     renderIntro(entry);
-    titles.forEach(({ el, tool, count }) => {
-      el.textContent = chartTitleText(tool, count);
+    named.forEach(({ el, tool, count }) => {
+      el.setAttribute('aria-label', chartTitleText(tool, count));
     });
   });
 
-  svg.addEventListener('mouseleave', () => renderIntro(entry));
+  plot.addEventListener('mouseleave', () => renderIntro(entry));
 }
 
 function renderIntro(entry) {
@@ -150,6 +151,6 @@ function renderEntry(entry, tool, count, licence) {
       count === null ? '' : ` &middot; ${count} ${escapeHtml(starsLabel)}`
     } &middot; ${escapeHtml(licence ?? 'Apache-2.0')}</p>
     <p class="entry__text">${escapeHtml(description)}</p>
-    <a class="btn btn--compact" href="${escapeHtml(tool.url)}" target="_blank" rel="noopener">${escapeHtml(openLabel)}</a>
+    <a class="btn btn--compact" href="${escapeHtml(tool.url)}" target="_blank" rel="noopener" aria-label="${escapeHtml(`${openLabel}: ${tool.name}, ${translate(translations, lang, 'a11y.new_tab')}`)}">${escapeHtml(openLabel)}</a>
   `;
 }

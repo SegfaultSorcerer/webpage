@@ -4,15 +4,20 @@
  * with `node --test` and importable straight into the browser modules.
  */
 
+/**
+ * Language -> spectral class, as references into the tokens defined in
+ * tokens.css. The hex values live there and only there; these are applied to
+ * a `--c` custom property, so the reference resolves at paint time.
+ */
 const SPECTRAL_CLASSES = {
-  shell: '#A8C8FF',
-  python: '#FFE9B8',
-  rust: '#FFB86B',
-  java: '#FFF3D6',
+  shell: 'var(--spectral-b)',
+  python: 'var(--spectral-f)',
+  rust: 'var(--spectral-k)',
+  java: 'var(--spectral-g)',
 };
 
 /** Colour for anything outside the mapped languages (M class, red). */
-export const SPECTRAL_DEFAULT = '#FF9B8A';
+export const SPECTRAL_DEFAULT = 'var(--spectral-m)';
 
 /** Repos that exist but should not appear on the site. */
 export const HIDDEN_REPOS = ['webpage', 'SegfaultSorcerer'];

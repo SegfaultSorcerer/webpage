@@ -5,6 +5,7 @@ export const translations = {
     'a11y.skip': 'Skip to content',
     'a11y.lang': 'Switch language to German',
     'a11y.menu': 'Open menu',
+    'a11y.new_tab': 'opens in a new tab',
 
     'nav.observer': 'Observer',
     'nav.instruments': 'Instruments',
@@ -19,6 +20,7 @@ export const translations = {
     'hero.line': "I build systems that have to keep running. And the tools that explain why they don't.",
     'hero.cta_catalogue': 'See the catalogue',
     'hero.cta_github': 'GitHub profile',
+    'hero.cta_github_a11y': 'GitHub profile, opens in a new tab',
 
     'facts.experience': 'Experience',
     'facts.years': 'years',
@@ -84,6 +86,7 @@ export const translations = {
     'transmissions.error': 'The catalogue is out of reach right now.',
     'transmissions.empty': 'No public repositories to show.',
     'transmissions.profile': 'Full profile on GitHub',
+    'transmissions.profile_a11y': 'Full profile on GitHub, opens in a new tab',
     'transmissions.star_one': 'star',
     'transmissions.star_other': 'stars',
   },
@@ -91,6 +94,7 @@ export const translations = {
     'a11y.skip': 'Zum Inhalt springen',
     'a11y.lang': 'Sprache auf Englisch umstellen',
     'a11y.menu': 'Menü öffnen',
+    'a11y.new_tab': 'wird in einem neuen Tab geöffnet',
 
     'nav.observer': 'Beobachter',
     'nav.instruments': 'Instrumente',
@@ -105,6 +109,7 @@ export const translations = {
     'hero.line': 'Ich baue Systeme, die laufen müssen. Und die Werkzeuge, die erklären, warum sie es nicht tun.',
     'hero.cta_catalogue': 'Zum Katalog',
     'hero.cta_github': 'GitHub-Profil',
+    'hero.cta_github_a11y': 'GitHub-Profil, wird in einem neuen Tab geöffnet',
 
     'facts.experience': 'Erfahrung',
     'facts.years': 'Jahre',
@@ -170,6 +175,7 @@ export const translations = {
     'transmissions.error': 'Der Katalog ist gerade nicht erreichbar.',
     'transmissions.empty': 'Keine öffentlichen Repositories vorhanden.',
     'transmissions.profile': 'Vollständiges Profil auf GitHub',
+    'transmissions.profile_a11y': 'Vollständiges Profil auf GitHub, wird in einem neuen Tab geöffnet',
     'transmissions.star_one': 'Stern',
     'transmissions.star_other': 'Sterne',
   },

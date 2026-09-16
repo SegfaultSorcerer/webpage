@@ -29,10 +29,10 @@ test('starRadius grows logarithmically and never collapses to zero', () => {
 });
 
 test('spectralColor maps languages case-insensitively', () => {
-  assert.equal(spectralColor('Shell'), '#A8C8FF');
-  assert.equal(spectralColor('python'), '#FFE9B8');
-  assert.equal(spectralColor('Rust'), '#FFB86B');
-  assert.equal(spectralColor('Java'), '#FFF3D6');
+  assert.equal(spectralColor('Shell'), 'var(--spectral-b)');
+  assert.equal(spectralColor('python'), 'var(--spectral-f)');
+  assert.equal(spectralColor('Rust'), 'var(--spectral-k)');
+  assert.equal(spectralColor('Java'), 'var(--spectral-g)');
   assert.equal(spectralColor('Brainfuck'), SPECTRAL_DEFAULT);
   assert.equal(spectralColor(null), SPECTRAL_DEFAULT);
 });

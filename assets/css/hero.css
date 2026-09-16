@@ -31,6 +31,8 @@
   max-width: 860px;
 }
 .spectrum svg { display: block; width: 100%; height: 84px; }
+.spectrum__lines { fill: var(--void); }
+.spectrum__ticks { stroke: var(--rule-bright); }
 
 .spectrum__labels {
   list-style: none;

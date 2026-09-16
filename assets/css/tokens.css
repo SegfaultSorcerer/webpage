@@ -13,6 +13,14 @@
   --ice: #8FC7FF;
   --ember: #F2A65A;
 
+  /* Spectral classes: the repository-language encoding used by the catalogue
+     chart and the feed. Single source of truth; lib.js references these. */
+  --spectral-b: #A8C8FF; /* Shell */
+  --spectral-f: #FFE9B8; /* Python */
+  --spectral-g: #FFF3D6; /* Java */
+  --spectral-k: #FFB86B; /* Rust */
+  --spectral-m: #FF9B8A; /* everything else */
+
   /* Type */
   --display: 'Newsreader', 'Times New Roman', serif;
   --prose: 'Spectral', Georgia, serif;
@@ -110,6 +118,9 @@ a { color: inherit; }
   left: var(--pad);
   top: -4rem;
   z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   background: var(--panel);
   border: 1px solid var(--ice);
   color: var(--starlight);
@@ -136,7 +147,15 @@ a { color: inherit; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Only transitions that move or reveal something are cut. Colour and border
+     transitions stay: a hover that fades from dim to ice is feedback, not
+     motion, and killing it costs the interface its state changes for nothing. */
+  .reveal,
+  .skip-link,
+  .menu-toggle span,
+  .chart__disc,
+  .chart__halo { transition-duration: 0.001ms !important; }
 }
