@@ -188,7 +188,9 @@
      what is on it. max-width keeps it inside the column when the output is wide. */
   width: max-content;
   max-width: 100%;
-  margin: var(--s-12) 0 0;
+  /* margin-top only: the shorthand would reset margin-left and knock the plate
+     off the content axis that .plate__body puts it on. */
+  margin-top: var(--s-12);
   border: 1px solid var(--rule);
   background: var(--panel);
   padding: var(--s-4) var(--s-6) var(--s-6);

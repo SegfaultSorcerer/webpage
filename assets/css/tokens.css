@@ -73,6 +73,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* The UA gives <figure> `margin: 1em 40px`, which silently knocks any figure
+   off the layout axis and can push the page into horizontal overflow. */
+figure { margin: 0; }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
