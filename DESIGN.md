@@ -289,6 +289,14 @@ The system's defining component and the reason for the whole world. Five tools p
 - **Each star is a focusable link** with an accessible name. Hover or focus raises its halo, brightens its label to starlight, strokes the disc in ice, and swaps the adjacent entry panel — which sits behind a left hairline on desktop and a top hairline below 900px.
 - **Descriptions are hard-coded, never fetched.** Only stars, language and licence come from the API.
 
+### Specimen Plate
+
+Real output from one of the instruments, set as a `pre` in the mono voice on panel ground. The catalogue says what the tools do; the specimen shows it, and a reader can check it.
+
+- **It sits in the chart's grid column**, directly beneath it, so the two plates share both edges. Spacing comes from the grid gap, never from a margin.
+- **Content is quoted, never composed.** Markdown pipes and heading marks stay exactly as the tool emits them; a tidied HTML table would read as a designed graphic and lose the point.
+- **It scrolls inside itself** rather than widening the page, and carries `tabindex="0"` so a keyboard can reach the scroll region. Horizontal padding is held to 1rem so the output clears the plate without a scrollbar from 1100px up.
+
 ### Signature: The Hero Spectrum
 
 An inline SVG absorption spectrum standing in for a skills list. A continuum band runs blue to red across six stops; six absorption lines fall at the positions of six labelled technologies. The band is `aria-hidden` with the technology list carried as real text beneath.
