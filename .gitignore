@@ -1,1 +1,7 @@
 .DS_Store
+
+# Impeccable session and machine state. The project config (config.json,
+# design.json, live/config.json) is committed; these three are not.
+.impeccable/hook.cache.json
+.impeccable/live/roots.json
+.impeccable/live/server.json

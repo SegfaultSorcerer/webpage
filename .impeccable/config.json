@@ -1,0 +1,62 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T09:49:25.306Z",
+        "reason": "Verified false positive: body's overflow-x propagates to the viewport, so body is not a scroll container and clips nothing. Confirmed in headless Chrome 151 at 320-1440px: the skip link reaches top:1rem on focus and no element is cut."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T09:50:56.346Z",
+        "reason": "Verified false positive: .facts, .fact and .plate are full-bleed sections; the horizontal inset is on the inner .container (20px mobile / 40px from 720px) and .fact adds 1.5rem inline padding from 640px. Checked in headless Chrome 151 at 320-1440px."
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T09:50:56.369Z",
+        "reason": "Verified false positive: the 0.08em is on .footer__note and .feed__name, both JetBrains Mono labels, not body prose. DESIGN.md's Wide Label Rule sets mono labels at 0.18em or wider; these two are the tightest labels in the system, still not body text."
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "assets/css/catalogue.css"
+        ],
+        "createdAt": "2026-09-16T09:50:56.391Z",
+        "reason": "Sanctioned by the committed visual world: the 40px two-axis grid is the catalogue chart's graph paper, a plot area behind real plotted data, recorded in DESIGN.md under Shapes. Not decorative page texture."
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T09:50:56.413Z",
+        "reason": "Sanctioned by the committed visual world: the 53 characters are the hero eyebrow (handle, city, coordinates) set in the mono label voice, which DESIGN.md's Wide Label Rule defines as always uppercase. It is a label carrying data, not a body passage."
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T09:51:14.752Z",
+        "reason": "Same catalogue chart graph paper as the catalogue.css entry; the detector attributes the rendered page to index.html. Plot area behind real plotted data, recorded in DESIGN.md under Shapes."
+      }
+    ]
+  }
+}
