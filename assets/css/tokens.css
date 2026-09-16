@@ -22,7 +22,7 @@
   --spectral-m: #FF9B8A; /* everything else */
 
   /* Type */
-  --display: 'Newsreader', 'Times New Roman', serif;
+  --display: 'Instrument Serif', 'Times New Roman', serif;
   --prose: 'Spectral', Georgia, serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
@@ -82,10 +82,10 @@ body {
 
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 600;
-  /* Newsreader carries an optical-size axis: let it adapt to the rendered size. */
-  font-optical-sizing: auto;
-  letter-spacing: -0.015em;
+  /* Instrument Serif is a single-weight display face: 400 is the only real
+     weight it has, and asking for 600 would get a synthesised bold. */
+  font-weight: 400;
+  letter-spacing: -0.005em;
   line-height: 1.05;
   margin: 0;
 }
