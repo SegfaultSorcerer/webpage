@@ -233,7 +233,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The name in the hero, set as two stacked blocks. The only place display size is used."
+        "purpose": "The name in the hero, set as two stacked blocks. The only place display size is used. Bluu Next ships one cut, so the weight is always 400."
       },
       "headline": {
         "displayName": "Headline",
@@ -361,7 +361,7 @@
       "refersTo": "plate-designation",
       "description": "Every section opens the same way: a parchment Newsreader heading, its ice designation in the label axis beside it from 900px (below that, a caption underneath), and an optional dim lead capped at the 62ch measure. The heading always comes first in the markup.",
       "html": "<header class=\"ds-plate-head\"><h2 class=\"ds-plate-title\">Five instruments for reading the dead</h2><span class=\"ds-plate-designation\">Catalogue</span><p class=\"ds-plate-lead\">Open-source tooling for JVM forensics, published as SegfaultSorcerer.</p></header>",
-      "css": ".ds-plate-head { margin-bottom: 3rem; } @media (min-width: 900px) { .ds-plate-head { display: grid; grid-template-columns: var(--axis, 200px) minmax(0, 1fr); column-gap: 2rem; align-items: baseline; } .ds-plate-designation { grid-column: 1; grid-row: 1; margin-top: 0; } .ds-plate-title { grid-column: 2; grid-row: 1; } .ds-plate-lead { grid-column: 2; grid-row: 2; } } .ds-plate-designation { display: block; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ice, #8FC7FF); margin-top: 0.75rem; } .ds-plate-title { font-family: var(--display, Newsreader, 'Times New Roman', serif); font-optical-sizing: auto; font-weight: 600; font-size: 2.75rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--parchment, #CFC5AE); margin: 0; } .ds-plate-lead { font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 1rem; line-height: 1.7; color: var(--dim, #7C8799); max-width: 62ch; margin: 1rem 0 0; }"
+      "css": ".ds-plate-head { margin-bottom: 3rem; } @media (min-width: 900px) { .ds-plate-head { display: grid; grid-template-columns: var(--axis, 200px) minmax(0, 1fr); column-gap: 2rem; align-items: baseline; } .ds-plate-designation { grid-column: 1; grid-row: 1; margin-top: 0; } .ds-plate-title { grid-column: 2; grid-row: 1; } .ds-plate-lead { grid-column: 2; grid-row: 2; } } .ds-plate-designation { display: block; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ice, #8FC7FF); margin-top: 0.75rem; } .ds-plate-title { font-family: var(--display, 'Bluu Next', 'Times New Roman', serif); font-weight: 600; font-size: 2.75rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--parchment, #CFC5AE); margin: 0; } .ds-plate-lead { font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 1rem; line-height: 1.7; color: var(--dim, #7C8799); max-width: 62ch; margin: 1rem 0 0; }"
     },
     {
       "name": "Data Panel Row",
@@ -393,7 +393,7 @@
       "refersTo": "plate-alt",
       "description": "A career station pinned to a vertical hairline axis by a 45°-rotated ice square. Dates are ember — one of only two places ember is spent.",
       "html": "<ol class=\"ds-log\"><li class=\"ds-log-entry\"><span class=\"ds-log-when\">2018 – now</span><div><h3 class=\"ds-log-role\">Team lead, development</h3><p class=\"ds-log-body\">Leading a team of seven developers, responsible for roughly 25 systems in production.</p></div></li></ol>",
-      "css": ".ds-log { list-style: none; margin: 0; padding: 0; } .ds-log-entry { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 2rem; align-items: start; padding: 0 0 3rem 2rem; border-left: 1px solid var(--rule, #1B2434); position: relative; } .ds-log-entry::before { content: ''; position: absolute; left: -4px; top: 0.55em; width: 7px; height: 7px; background: var(--ice, #8FC7FF); transform: rotate(45deg); } .ds-log-when { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ember, #F2A65A); } .ds-log-role { font-family: var(--display, Newsreader, 'Times New Roman', serif); font-optical-sizing: auto; font-weight: 600; font-size: 1.25rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--parchment, #CFC5AE); margin: 0 0 0.5rem; } .ds-log-body { margin: 0; font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 0.8125rem; line-height: 1.7; color: var(--starlight, #E6E9F2); opacity: 0.82; max-width: 62ch; }"
+      "css": ".ds-log { list-style: none; margin: 0; padding: 0; } .ds-log-entry { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 2rem; align-items: start; padding: 0 0 3rem 2rem; border-left: 1px solid var(--rule, #1B2434); position: relative; } .ds-log-entry::before { content: ''; position: absolute; left: -4px; top: 0.55em; width: 7px; height: 7px; background: var(--ice, #8FC7FF); transform: rotate(45deg); } .ds-log-when { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ember, #F2A65A); } .ds-log-role { font-family: var(--display, 'Bluu Next', 'Times New Roman', serif); font-weight: 600; font-size: 1.25rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--parchment, #CFC5AE); margin: 0 0 0.5rem; } .ds-log-body { margin: 0; font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 0.8125rem; line-height: 1.7; color: var(--starlight, #E6E9F2); opacity: 0.82; max-width: 62ch; }"
     },
     {
       "name": "Catalogue Star",
@@ -442,7 +442,7 @@
       },
       {
         "name": "The Three Voices Rule",
-        "body": "Newsreader states, Spectral explains, JetBrains Mono measures. No voice takes another's job. A number that is a measurement is mono; a number that is a headline figure is Newsreader; nothing that is prose is ever mono.",
+        "body": "Bluu Next states, Spectral explains, JetBrains Mono measures. No voice takes another's job. A number that is a measurement is mono; a number that is a headline figure is Bluu Next; nothing that is prose is ever mono.",
         "section": "typography"
       },
       {
@@ -493,6 +493,7 @@
       "Do put the heading first and hang its designation in the --axis column beside it, or beneath it as a caption below 900px."
     ],
     "donts": [
+      "Don't ask the display face for a weight it does not have. Bluu Next ships one cut; a synthesised bold smears exactly the stroke contrast it is chosen for.",
       "Don't set a tracked-caps label above a heading. The heading comes first in the markup and on the page; a designation belongs in the margin axis or under the heading, never stacked over it.",
       "Don't introduce a third accent, and never use violet — it is the anti-reference of the discarded predecessor.",
       "Don't add a light theme. The aesthetic lives on the black ground and a light mode would break the core idea.",

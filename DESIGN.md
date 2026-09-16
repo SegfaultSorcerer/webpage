@@ -19,23 +19,23 @@ colors:
   spectral-m-other: "#FF9B8A"
 typography:
   display:
-    fontFamily: "Newsreader, 'Times New Roman', serif"
+    fontFamily: "Bluu Next, 'Times New Roman', serif"
     fontSize: "clamp(3rem, 13vw, 7rem)"
-    fontWeight: 700
+    fontWeight: 400
     lineHeight: 1.05
-    letterSpacing: "-0.015em"
+    letterSpacing: "-0.01em"
   headline:
-    fontFamily: "Newsreader, 'Times New Roman', serif"
+    fontFamily: "Bluu Next, 'Times New Roman', serif"
     fontSize: "2.75rem"
-    fontWeight: 600
+    fontWeight: 400
     lineHeight: 1.05
-    letterSpacing: "-0.015em"
+    letterSpacing: "-0.01em"
   title:
-    fontFamily: "Newsreader, 'Times New Roman', serif"
+    fontFamily: "Bluu Next, 'Times New Roman', serif"
     fontSize: "1.25rem"
-    fontWeight: 600
+    fontWeight: 400
     lineHeight: 1.05
-    letterSpacing: "-0.015em"
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "Spectral, Georgia, serif"
     fontSize: "1rem"
@@ -183,24 +183,28 @@ The language encoding, used only as data on the catalogue chart and in the feed'
 
 ## Typography
 
-**Display Font:** Newsreader (with Times New Roman, serif)
+**Display Font:** Bluu Next (self-hosted, OFL; with Times New Roman, serif)
 **Body Font:** Spectral (with Georgia, serif)
 **Label/Mono Font:** JetBrains Mono (with ui-monospace, SF Mono, Menlo)
 
-**Character:** An editorial serif with an optical-size axis for the plate headings, a screen-optimised serif that reads like a scientific monograph for prose, and an exact mono for every measurement. None is the obvious choice for a developer portfolio, and that is deliberate. Newsreader replaced Bodoni Moda after visual review: light text on a black ground optically thins strokes, and a Didone lives on extreme stroke contrast, so its hairlines broke down.
+**Character:** An engraved display serif for the plate headings, a screen-optimised serif that reads like a scientific monograph for prose, and an exact mono for every measurement. None is the obvious choice for a developer portfolio, and that is deliberate.
+
+The display face took three tries, and the reasoning is worth keeping. Bodoni Moda came first and was dropped after visual review: a Didone lives on extreme stroke contrast and its hairlines broke down on the black ground. Newsreader replaced it and held up, but it is a text face doing display duty — a cousin of Spectral, so the gap between the display voice and the reading voice was carried by size rather than by character. Instrument Serif was tried next and rejected for a different reason: it is a genuinely good display face, but a saturated one, and a page arguing that its author builds unusual things should not wear the season's most common serif. Bluu Next is the answer to all three problems at once — wedge serifs, high contrast that survives light-on-dark, a voice that could not be mistaken for the body text, and rare enough that it carries no borrowed fashion.
 
 ### Hierarchy
 
-- **Display** (700, `clamp(3rem, 13vw, 7rem)`, 1.05, -0.015em): The name in the hero. Set as two stacked blocks, one word per line. This is the only place display size is used.
-- **Headline** (600, 2.75rem desktop / 1.75rem below 900px, 1.05): Plate titles. Always parchment, and always first — nothing is set above a heading.
-- **Title** (600, 1.25rem, 1.05): Log entry roles, and at 1.75rem the figures in the facts bar.
+- **Display** (400, `clamp(3rem, 13vw, 7rem)`, 1.05, -0.01em): The name in the hero. Set as two stacked blocks, one word per line. This is the only place display size is used.
+- **Headline** (400, 2.75rem desktop / 1.75rem below 900px, 1.05): Plate titles. Always parchment, and always first — nothing is set above a heading.
+- **Title** (400, 1.25rem, 1.05): Log entry roles, and at 1.75rem the figures in the facts bar.
 - **Body** (300, 1rem, 1.7): All prose, capped at a 62ch measure. Set in Spectral at weight 300 — the light weight is load-bearing, not incidental; it keeps long passages quiet against the void.
 - **Label** (500, 0.6875rem, 0.18em, uppercase): Every mono label, coordinate, designation and caption. Plate designations widen to 0.28em; the monogram and footer mark to 0.22em.
 - **Control** (500, 0.8125rem, 0.12em, uppercase): Buttons, mobile nav items, feed repository names, the skip link.
 
 ### Named Rules
 
-**The Three Voices Rule.** Newsreader states, Spectral explains, JetBrains Mono measures. No voice takes another's job. A number that is a measurement is mono; a number that is a headline figure is Newsreader; nothing that is prose is ever mono.
+**The Three Voices Rule.** Bluu Next states, Spectral explains, JetBrains Mono measures. No voice takes another's job. A number that is a measurement is mono; a number that is a headline figure is Newsreader; nothing that is prose is ever mono.
+
+**The Self-Hosted Display Rule.** The display face is served from `assets/fonts/` as one 30 KB woff2 and preloaded, because the hero name is the LCP element. Only the two Google families remain remote. A display face on a third-party critical path is a rendering risk the page does not need to take.
 
 **The Wide Label Rule.** Mono labels are always uppercase and always tracked at 0.18em or wider. A tight, lowercase mono string reads as code; a wide, uppercase one reads as an instrument marking. This system only ever wants the second.
 
@@ -316,4 +320,5 @@ Its load sequence is the page's one orchestrated moment, roughly 1.6s end to end
 - **Don't** use pure black (#000) or pure white (#FFF). The ground is void (#04060C); text is starlight (#E6E9F2) or parchment (#CFC5AE).
 - **Don't** wrap a list of rows in cards when hairlines between them will do.
 - **Don't** set a tracked-caps label above a heading. The heading comes first in the markup and on the page; a designation belongs in the margin axis or under the heading, never stacked over it.
+- **Don't** ask the display face for a weight it does not have. Bluu Next ships one cut; a synthesised bold smears exactly the stroke contrast it is chosen for.
 - **Don't** animate anything that is not carrying information. The page gets one orchestrated moment at load and then holds still.

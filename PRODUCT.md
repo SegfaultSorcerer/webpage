@@ -63,7 +63,7 @@ All four confirmed as still binding:
 - Name: Patrik Neumann. Open-source handle: **SegfaultSorcerer**. Monogram: PN with a four-pointed star.
 - Voice: measured, factual, unhurried; German-technical register in both languages. Claims are stated plainly and never inflated. The arcane note belongs to the tool names themselves (`thread-necromancer`, `heap-seance`, `gc-exorcist`, `spring-grimoire`) and is never asserted through occult ornament.
 - Binding copy, both languages: "I build systems that have to keep running. And the tools that explain why they don't." / "Ich baue Systeme, die laufen müssen. Und die Werkzeuge, die erklären, warum sie es nicht tun."
-- An approved visual world exists and is documented in `docs/superpowers/specs/2026-08-19-portfolio-redesign-design.md` (Celestial Forensics: star atlas, two accent colours, no violet, no rounded corners, Newsreader / Spectral / JetBrains Mono).
+- An approved visual world exists and is documented in `docs/superpowers/specs/2026-08-19-portfolio-redesign-design.md` (Celestial Forensics: star atlas, two accent colours, no violet, no rounded corners; the display face has since moved on to Bluu Next, Spectral and JetBrains Mono are unchanged).
 
 ## Evidence on Hand
 
