@@ -1,5 +1,17 @@
 /* ── Design tokens, reset, base typography ─────────────────────── */
 
+/* Bluu Next (Jean-Baptiste Morizot / Velvetyne, OFL — see assets/fonts/).
+   Self-hosted: one 30 KB file, no third-party request in the critical path.
+   A single cut, so it is declared at 400 and never synthesised. */
+@font-face {
+  font-family: 'Bluu Next';
+  src: url('../fonts/bluunext-bold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
   /* Palette */
   --void: #04060C;
@@ -13,8 +25,16 @@
   --ice: #8FC7FF;
   --ember: #F2A65A;
 
+  /* Spectral classes: the repository-language encoding used by the catalogue
+     chart and the feed. Single source of truth; lib.js references these. */
+  --spectral-b: #A8C8FF; /* Shell */
+  --spectral-f: #FFE9B8; /* Python */
+  --spectral-g: #FFF3D6; /* Java */
+  --spectral-k: #FFB86B; /* Rust */
+  --spectral-m: #FF9B8A; /* everything else */
+
   /* Type */
-  --display: 'Newsreader', 'Times New Roman', serif;
+  --display: 'Bluu Next', 'Times New Roman', serif;
   --prose: 'Spectral', Georgia, serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
@@ -42,6 +62,9 @@
   --measure: 62ch;
   --content: 1180px;
   --pad: 20px;
+  /* The label axis. Plate designations, instrument categories and log dates
+     all hang off this one column so the labels line up down the page. */
+  --axis: 200px;
 }
 
 @media (min-width: 720px) {
@@ -49,6 +72,10 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+
+/* The UA gives <figure> `margin: 1em 40px`, which silently knocks any figure
+   off the layout axis and can push the page into horizontal overflow. */
+figure { margin: 0; }
 
 html {
   scroll-behavior: smooth;
@@ -71,10 +98,10 @@ body {
 
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 600;
-  /* Newsreader carries an optical-size axis: let it adapt to the rendered size. */
-  font-optical-sizing: auto;
-  letter-spacing: -0.015em;
+  /* Bluu Next ships one cut. Asking for 600 or 700 would get a synthesised
+     bold, which smears exactly the stroke contrast the face is chosen for. */
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.05;
   margin: 0;
 }
@@ -110,6 +137,9 @@ a { color: inherit; }
   left: var(--pad);
   top: -4rem;
   z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   background: var(--panel);
   border: 1px solid var(--ice);
   color: var(--starlight);
@@ -136,7 +166,15 @@ a { color: inherit; }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Only transitions that move or reveal something are cut. Colour and border
+     transitions stay: a hover that fades from dim to ice is feedback, not
+     motion, and killing it costs the interface its state changes for nothing. */
+  .reveal,
+  .skip-link,
+  .menu-toggle span,
+  .chart__disc,
+  .chart__halo { transition-duration: 0.001ms !important; }
 }

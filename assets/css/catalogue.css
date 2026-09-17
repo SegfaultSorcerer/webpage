@@ -5,8 +5,13 @@
   gap: var(--s-8);
   align-items: start;
 }
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
   .catalogue { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s-12); }
+  /* Explicit placement: the specimen sits under the chart and inherits its
+     column, so the two plates share both edges instead of only the left one. */
+  .chart    { grid-column: 1; grid-row: 1; }
+  .entry    { grid-column: 2; grid-row: 1; }
+  .specimen { grid-column: 1; grid-row: 2; }
 }
 
 .chart {
@@ -20,25 +25,81 @@
   padding: var(--s-4);
 }
 
-.chart__svg { display: block; width: 100%; height: auto; overflow: visible; }
+/* The plot is the shared coordinate space: the SVG draws the constellation
+   lines in chart units, the star layer sits on top in real pixels. */
+.chart__plot { position: relative; }
 
-.chart__star { cursor: pointer; }
-.chart__halo { opacity: 0.14; transition: opacity 200ms ease; }
-.chart__disc { transition: transform 200ms ease; transform-origin: center; transform-box: fill-box; }
+.chart__svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart__lines { stroke: var(--rule-bright); }
+
+.chart__stars { position: absolute; inset: 0; }
+
+/* A star's box is its disc, so the disc lands exactly on the plotted point and
+   the label hangs beneath it. Sizes are in px, not chart units: the radius
+   encodes the star count, so it must not change with the viewport. */
+.chart__star {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: calc(var(--r) * 2);
+  height: calc(var(--r) * 2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+/* Invisible 44px touch target centred on the star. The two closest stars are
+   61px apart at 320px, so these never overlap one another. */
+.chart__star::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.chart__halo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--r) * 6);
+  height: calc(var(--r) * 6);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--c);
+  opacity: 0.14;
+  transition: opacity 200ms ease;
+}
+
+.chart__disc {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--c);
+}
+
 .chart__label {
+  position: absolute;
+  top: calc(100% + var(--s-2));
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   font-family: var(--mono);
-  font-size: 2.4px;
+  font-size: var(--t-xs);
+  /* Single line: the 1.7 body leading would pad the box and collide the
+     closest label pairs into each other at 320px. */
+  line-height: 1;
   letter-spacing: 0.14em;
-  fill: var(--dim);
-  transition: fill 180ms ease;
+  color: var(--dim);
+  transition: color 180ms ease;
 }
 
 .chart__star:hover .chart__halo,
 .chart__star:focus-visible .chart__halo { opacity: 0.3; }
 .chart__star:hover .chart__label,
-.chart__star:focus-visible .chart__label { fill: var(--starlight); }
-.chart__star:focus-visible { outline: none; }
-.chart__star:focus-visible .chart__disc { stroke: var(--ice); stroke-width: 0.6; }
+.chart__star:focus-visible .chart__label { color: var(--starlight); }
 
 .chart__legend {
   display: flex;
@@ -65,7 +126,7 @@
   padding-left: var(--s-6);
   min-height: 200px;
 }
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   .entry { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: var(--s-6); }
 }
 
@@ -84,3 +145,72 @@
   margin-bottom: var(--s-4);
 }
 .entry__text { color: var(--parchment); font-size: var(--t-sm); margin-bottom: var(--s-4); }
+
+.entry__get {
+  display: grid;
+  gap: var(--s-1);
+  margin-bottom: var(--s-4);
+}
+.entry__get-label { color: var(--dim); }
+.entry__get-line {
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  line-height: 1.6;
+  color: var(--ice);
+  overflow-wrap: anywhere;
+}
+
+/* ── Touch listing ── */
+
+/* A tap on a star opens the repository, so the hover panel can only be read
+   after the visitor has already committed. Coarse pointers get every entry
+   listed under the chart instead. */
+.catalogue__list { display: none; }
+
+@media (pointer: coarse) {
+  .catalogue { grid-template-columns: minmax(0, 1fr); }
+  .entry { display: none; }
+
+  .catalogue__list {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .catalogue__item {
+    padding: var(--s-6) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+/* ── Specimen ── */
+
+/* Real output from one of the tools. The catalogue says what the instruments
+   do; this shows it, which is the only version a reader can check.
+   A grid item in the chart's column, so both plates share both edges; spacing
+   comes from the grid gap rather than a margin that would double it. */
+.specimen {
+  min-width: 0;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  padding: var(--s-4) var(--s-4) var(--s-6);
+}
+
+.specimen__caption {
+  color: var(--dim);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--s-4);
+}
+
+.specimen__body {
+  margin: 0;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: var(--t-xs);
+  line-height: 1.7;
+  color: var(--parchment);
+  white-space: pre;
+}
+.specimen__body:focus-visible { outline: 2px solid var(--ice); outline-offset: 4px; }

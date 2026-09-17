@@ -115,6 +115,9 @@ function renderTransmissions(container, repos, lang) {
   container.innerHTML = shown.map((repo) => {
     const starKey = repo.stars === 1 ? 'transmissions.star_one' : 'transmissions.star_other';
     const starsLabel = translate(translations, lang, starKey);
+    // Appended rather than set as an aria-label: a label would replace the row's
+    // own text and take the repository description with it.
+    const newTab = translate(translations, lang, 'a11y.new_tab');
     return `
     <a class="feed__item" href="${escapeHtml(safeUrl(repo.url))}" target="_blank" rel="noopener">
       <span class="feed__name">${escapeHtml(repo.name)}</span>
@@ -125,6 +128,7 @@ function renderTransmissions(container, repos, lang) {
         <span>${repo.stars} ${escapeHtml(starsLabel)}</span>
         <span>${escapeHtml(formatMonthYear(repo.updatedAt, lang))}</span>
       </span>
+      <span class="visually-hidden">${escapeHtml(newTab)}</span>
     </a>
   `;
   }).join('');

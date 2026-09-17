@@ -1,0 +1,509 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-16T09:18:17Z",
+  "title": "Design System: Celestial Forensics",
+  "extensions": {
+    "colorMeta": {
+      "void": {
+        "role": "neutral",
+        "displayName": "Void",
+        "canonical": "oklch(9% 0.02 265)",
+        "tonalRamp": [
+          "oklch(15% 0.02 265)",
+          "oklch(26% 0.02 265)",
+          "oklch(37% 0.02 265)",
+          "oklch(48% 0.02 265)",
+          "oklch(59% 0.02 265)",
+          "oklch(70% 0.02 265)",
+          "oklch(81% 0.02 265)",
+          "oklch(92% 0.02 265)"
+        ]
+      },
+      "deepfield": {
+        "role": "neutral",
+        "displayName": "Deepfield",
+        "canonical": "oklch(13% 0.025 265)",
+        "tonalRamp": [
+          "oklch(15% 0.025 265)",
+          "oklch(26% 0.025 265)",
+          "oklch(37% 0.025 265)",
+          "oklch(48% 0.025 265)",
+          "oklch(59% 0.025 265)",
+          "oklch(70% 0.025 265)",
+          "oklch(81% 0.025 265)",
+          "oklch(92% 0.025 265)"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "oklch(17% 0.025 265)",
+        "tonalRamp": [
+          "oklch(15% 0.025 262)",
+          "oklch(26% 0.025 262)",
+          "oklch(37% 0.025 262)",
+          "oklch(48% 0.025 262)",
+          "oklch(59% 0.025 262)",
+          "oklch(70% 0.025 262)",
+          "oklch(81% 0.025 262)",
+          "oklch(92% 0.025 262)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "oklch(24% 0.03 258)",
+        "tonalRamp": [
+          "oklch(15% 0.03 258)",
+          "oklch(26% 0.03 258)",
+          "oklch(37% 0.03 258)",
+          "oklch(48% 0.03 258)",
+          "oklch(59% 0.03 258)",
+          "oklch(70% 0.03 258)",
+          "oklch(81% 0.03 258)",
+          "oklch(92% 0.03 258)"
+        ]
+      },
+      "rule-bright": {
+        "role": "neutral",
+        "displayName": "Rule Bright",
+        "canonical": "oklch(33% 0.045 258)",
+        "tonalRamp": [
+          "oklch(15% 0.045 258)",
+          "oklch(26% 0.045 258)",
+          "oklch(37% 0.045 258)",
+          "oklch(48% 0.045 258)",
+          "oklch(59% 0.045 258)",
+          "oklch(70% 0.045 258)",
+          "oklch(81% 0.045 258)",
+          "oklch(92% 0.045 258)"
+        ]
+      },
+      "starlight": {
+        "role": "neutral",
+        "displayName": "Starlight",
+        "canonical": "oklch(93% 0.01 265)",
+        "tonalRamp": [
+          "oklch(15% 0.01 265)",
+          "oklch(26% 0.01 265)",
+          "oklch(37% 0.01 265)",
+          "oklch(48% 0.01 265)",
+          "oklch(59% 0.01 265)",
+          "oklch(70% 0.01 265)",
+          "oklch(81% 0.01 265)",
+          "oklch(92% 0.01 265)"
+        ]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "oklch(81% 0.03 90)",
+        "tonalRamp": [
+          "oklch(15% 0.03 90)",
+          "oklch(26% 0.03 90)",
+          "oklch(37% 0.03 90)",
+          "oklch(48% 0.03 90)",
+          "oklch(59% 0.03 90)",
+          "oklch(70% 0.03 90)",
+          "oklch(81% 0.03 90)",
+          "oklch(92% 0.03 90)"
+        ]
+      },
+      "dim": {
+        "role": "neutral",
+        "displayName": "Dim",
+        "canonical": "oklch(58% 0.03 258)",
+        "tonalRamp": [
+          "oklch(15% 0.03 258)",
+          "oklch(26% 0.03 258)",
+          "oklch(37% 0.03 258)",
+          "oklch(48% 0.03 258)",
+          "oklch(59% 0.03 258)",
+          "oklch(70% 0.03 258)",
+          "oklch(81% 0.03 258)",
+          "oklch(92% 0.03 258)"
+        ]
+      },
+      "ice": {
+        "role": "primary",
+        "displayName": "B-Class Ice",
+        "canonical": "oklch(80% 0.10 250)",
+        "tonalRamp": [
+          "oklch(15% 0.10 250)",
+          "oklch(26% 0.10 250)",
+          "oklch(37% 0.10 250)",
+          "oklch(48% 0.10 250)",
+          "oklch(59% 0.10 250)",
+          "oklch(70% 0.10 250)",
+          "oklch(81% 0.10 250)",
+          "oklch(92% 0.10 250)"
+        ]
+      },
+      "ember": {
+        "role": "secondary",
+        "displayName": "K-Class Ember",
+        "canonical": "oklch(77% 0.13 62)",
+        "tonalRamp": [
+          "oklch(15% 0.13 62)",
+          "oklch(26% 0.13 62)",
+          "oklch(37% 0.13 62)",
+          "oklch(48% 0.13 62)",
+          "oklch(59% 0.13 62)",
+          "oklch(70% 0.13 62)",
+          "oklch(81% 0.13 62)",
+          "oklch(92% 0.13 62)"
+        ]
+      },
+      "spectral-b-shell": {
+        "role": "tertiary",
+        "displayName": "B-Class Shell",
+        "canonical": "oklch(82% 0.08 260)",
+        "tonalRamp": [
+          "oklch(15% 0.08 260)",
+          "oklch(26% 0.08 260)",
+          "oklch(37% 0.08 260)",
+          "oklch(48% 0.08 260)",
+          "oklch(59% 0.08 260)",
+          "oklch(70% 0.08 260)",
+          "oklch(81% 0.08 260)",
+          "oklch(92% 0.08 260)"
+        ]
+      },
+      "spectral-f-python": {
+        "role": "tertiary",
+        "displayName": "F-Class Python",
+        "canonical": "oklch(93% 0.05 85)",
+        "tonalRamp": [
+          "oklch(15% 0.05 85)",
+          "oklch(26% 0.05 85)",
+          "oklch(37% 0.05 85)",
+          "oklch(48% 0.05 85)",
+          "oklch(59% 0.05 85)",
+          "oklch(70% 0.05 85)",
+          "oklch(81% 0.05 85)",
+          "oklch(92% 0.05 85)"
+        ]
+      },
+      "spectral-g-java": {
+        "role": "tertiary",
+        "displayName": "G-Class Java",
+        "canonical": "oklch(96% 0.03 85)",
+        "tonalRamp": [
+          "oklch(15% 0.03 85)",
+          "oklch(26% 0.03 85)",
+          "oklch(37% 0.03 85)",
+          "oklch(48% 0.03 85)",
+          "oklch(59% 0.03 85)",
+          "oklch(70% 0.03 85)",
+          "oklch(81% 0.03 85)",
+          "oklch(92% 0.03 85)"
+        ]
+      },
+      "spectral-k-rust": {
+        "role": "tertiary",
+        "displayName": "K-Class Rust",
+        "canonical": "oklch(82% 0.12 65)",
+        "tonalRamp": [
+          "oklch(15% 0.12 65)",
+          "oklch(26% 0.12 65)",
+          "oklch(37% 0.12 65)",
+          "oklch(48% 0.12 65)",
+          "oklch(59% 0.12 65)",
+          "oklch(70% 0.12 65)",
+          "oklch(81% 0.12 65)",
+          "oklch(92% 0.12 65)"
+        ]
+      },
+      "spectral-m-other": {
+        "role": "tertiary",
+        "displayName": "M-Class Other",
+        "canonical": "oklch(76% 0.11 30)",
+        "tonalRamp": [
+          "oklch(15% 0.11 30)",
+          "oklch(26% 0.11 30)",
+          "oklch(37% 0.11 30)",
+          "oklch(48% 0.11 30)",
+          "oklch(59% 0.11 30)",
+          "oklch(70% 0.11 30)",
+          "oklch(81% 0.11 30)",
+          "oklch(92% 0.11 30)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero, set as two stacked blocks. The only place display size is used. Bluu Next ships one cut, so the weight is always 400."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Plate titles, always parchment and always preceded by an ice eyebrow. Steps down to 1.75rem below 900px."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Observation-log roles at 1.25rem; the facts-bar figures use the same face at 1.75rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose, capped at a 62ch measure. Weight 300 is load-bearing: it keeps long passages quiet against the void."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Mono labels, coordinates, designations and captions. Always uppercase. Eyebrows widen to 0.28em, the monogram to 0.22em."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Buttons, mobile nav items, feed repository names and the skip link. Always uppercase."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "hover",
+        "value": "160ms ease",
+        "purpose": "Default state change on links, buttons and nav items."
+      },
+      {
+        "name": "surface",
+        "value": "180ms ease",
+        "purpose": "Feed row filling to panel tone on hover — the only background-change hover in the system."
+      },
+      {
+        "name": "state",
+        "value": "200ms ease",
+        "purpose": "Catalogue star halo opacity and disc scale on hover or focus."
+      },
+      {
+        "name": "topbar",
+        "value": "240ms ease",
+        "purpose": "Topbar background and border fading in once the page is scrolled."
+      },
+      {
+        "name": "wipe",
+        "value": "420ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "The hero spectrum band drawing itself from the left. The one eased-out gesture in the system."
+      },
+      {
+        "name": "reveal",
+        "value": "620ms ease",
+        "purpose": "Scroll reveal: opacity plus a 14px rise, fired once per element."
+      },
+      {
+        "name": "stagger",
+        "value": "60ms",
+        "purpose": "Delay between sibling elements in the hero sequence (absorption lines) and section reveals."
+      },
+      {
+        "name": "hero-sequence",
+        "value": "~1600ms",
+        "purpose": "Total length of the page's single orchestrated load moment. Nothing after it moves unless a user acts."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "spectrum-legend",
+        "value": "480px"
+      },
+      {
+        "name": "facts-two-up",
+        "value": "640px"
+      },
+      {
+        "name": "pad-wide",
+        "value": "720px"
+      },
+      {
+        "name": "rows-split",
+        "value": "820px"
+      },
+      {
+        "name": "axis-engages",
+        "value": "900px"
+      },
+      {
+        "name": "facts-four-up",
+        "value": "960px"
+      },
+      {
+        "name": "two-column",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action. An outline, never a solid — the system has no filled button.",
+      "html": "<a class=\"ds-btn\" href=\"#\">See the catalogue</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--starlight, #E6E9F2); background: transparent; border: 1px solid var(--rule-bright, #2C3A52); border-radius: 2px; padding: 0.75rem 1.5rem; cursor: pointer; transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease; } .ds-btn:hover { border-color: var(--ice, #8FC7FF); color: var(--ice, #8FC7FF); } .ds-btn:focus-visible { outline: 2px solid var(--ice, #8FC7FF); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The secondary half of an action pair. Same geometry, dimmer border and text, converging on ice at hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">GitHub profile</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--dim, #7C8799); background: transparent; border: 1px solid var(--rule, #1B2434); border-radius: 2px; padding: 0.75rem 1.5rem; cursor: pointer; transition: border-color 160ms ease, color 160ms ease; } .ds-btn-ghost:hover { border-color: var(--ice, #8FC7FF); color: var(--ice, #8FC7FF); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ice, #8FC7FF); outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Topbar section link. The bottom hairline is the active indicator — no pill, no fill.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Observer</a><a href=\"#\">Instruments</a><a class=\"is-current\" href=\"#\">Catalogue</a><a href=\"#\">Log</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 1.5rem; } .ds-nav a { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim, #7C8799); text-decoration: none; padding-block: 14px; border-bottom: 1px solid transparent; transition: color 160ms ease, border-color 160ms ease; } .ds-nav a:hover { color: var(--starlight, #E6E9F2); } .ds-nav a.is-current { color: var(--ice, #8FC7FF); border-bottom-color: var(--ice, #8FC7FF); } .ds-nav a:focus-visible { outline: 2px solid var(--ice, #8FC7FF); outline-offset: 3px; }"
+    },
+    {
+      "name": "Plate Heading",
+      "kind": "custom",
+      "refersTo": "plate-designation",
+      "description": "Every section opens the same way: a parchment Newsreader heading, its ice designation in the label axis beside it from 900px (below that, a caption underneath), and an optional dim lead capped at the 62ch measure. The heading always comes first in the markup.",
+      "html": "<header class=\"ds-plate-head\"><h2 class=\"ds-plate-title\">Five instruments for reading the dead</h2><span class=\"ds-plate-designation\">Catalogue</span><p class=\"ds-plate-lead\">Open-source tooling for JVM forensics, published as SegfaultSorcerer.</p></header>",
+      "css": ".ds-plate-head { margin-bottom: 3rem; } @media (min-width: 900px) { .ds-plate-head { display: grid; grid-template-columns: var(--axis, 200px) minmax(0, 1fr); column-gap: 2rem; align-items: baseline; } .ds-plate-designation { grid-column: 1; grid-row: 1; margin-top: 0; } .ds-plate-title { grid-column: 2; grid-row: 1; } .ds-plate-lead { grid-column: 2; grid-row: 2; } } .ds-plate-designation { display: block; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ice, #8FC7FF); margin-top: 0.75rem; } .ds-plate-title { font-family: var(--display, 'Bluu Next', 'Times New Roman', serif); font-weight: 600; font-size: 2.75rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--parchment, #CFC5AE); margin: 0; } .ds-plate-lead { font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 1rem; line-height: 1.7; color: var(--dim, #7C8799); max-width: 62ch; margin: 1rem 0 0; }"
+    },
+    {
+      "name": "Data Panel Row",
+      "kind": "card",
+      "refersTo": "panel-chart",
+      "description": "The marginal data panel beside prose. No border box — rows are separated by top hairlines, with a closing rule on the last.",
+      "html": "<dl class=\"ds-data\"><div><dt>Role</dt><dd>Team lead, development</dd></div><div><dt>Location</dt><dd>Frankfurt am Main, Germany</dd></div><div><dt>Focus</dt><dd>Enterprise Java, AI integration, JVM forensics</dd></div></dl>",
+      "css": ".ds-data { margin: 0; } .ds-data div { display: grid; gap: 0.25rem; padding: 1rem 0; border-top: 1px solid var(--rule, #1B2434); } .ds-data div:last-child { border-bottom: 1px solid var(--rule, #1B2434); } .ds-data dt { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim, #7C8799); } .ds-data dd { margin: 0; font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 0.8125rem; line-height: 1.7; color: var(--parchment, #CFC5AE); }"
+    },
+    {
+      "name": "Instrument Row",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "The stack table: a fixed 180px ice label column against a fluid parchment mono list, hairline-separated. Deliberately quiet.",
+      "html": "<div class=\"ds-instruments\"><div class=\"ds-instrument\"><span class=\"ds-instrument-group\">Backend</span><span class=\"ds-instrument-items\">Java · Spring Boot · Spring Cloud · Hibernate · jOOQ · REST</span></div><div class=\"ds-instrument\"><span class=\"ds-instrument-group\">Data</span><span class=\"ds-instrument-items\">Oracle · SQL · schema design · migrations</span></div></div>",
+      "css": ".ds-instruments { border-top: 1px solid var(--rule, #1B2434); } .ds-instrument { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 1.5rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--rule, #1B2434); } .ds-instrument-group { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ice, #8FC7FF); } .ds-instrument-items { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.8125rem; line-height: 1.9; color: var(--parchment, #CFC5AE); }"
+    },
+    {
+      "name": "Feed Row",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "A live GitHub repository as a catalogue entry. Three columns on a hairline grid, never a card. The language dot carries the spectral-class encoding.",
+      "html": "<a class=\"ds-feed-item\" href=\"#\"><span class=\"ds-feed-name\">gc-exorcist</span><p class=\"ds-feed-desc\">GC log analysis with tuning recommendations for JDK 8-21+.</p><span class=\"ds-feed-meta\"><i style=\"--c: #A8C8FF\"></i>Shell<span>★ 3</span><span>Aug 2026</span></span></a>",
+      "css": ".ds-feed-item { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr) minmax(160px, max-content); gap: 1.5rem; align-items: baseline; padding: 1.5rem 0.75rem; border-bottom: 1px solid var(--rule, #1B2434); text-decoration: none; transition: background-color 180ms ease; } .ds-feed-item:hover { background: var(--panel, #0E131F); } .ds-feed-item:focus-visible { outline: 2px solid var(--ice, #8FC7FF); outline-offset: 3px; } .ds-feed-name { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.08em; color: var(--ice, #8FC7FF); } .ds-feed-desc { margin: 0; font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 0.8125rem; line-height: 1.7; color: var(--parchment, #CFC5AE); } .ds-feed-meta { display: flex; align-items: center; flex-wrap: nowrap; gap: 0.75rem; white-space: nowrap; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; letter-spacing: 0.08em; color: var(--dim, #7C8799); } .ds-feed-meta i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); display: inline-block; }"
+    },
+    {
+      "name": "Observation Log Entry",
+      "kind": "custom",
+      "refersTo": "plate-alt",
+      "description": "A career station pinned to a vertical hairline axis by a 45°-rotated ice square. Dates are ember — one of only two places ember is spent.",
+      "html": "<ol class=\"ds-log\"><li class=\"ds-log-entry\"><span class=\"ds-log-when\">2018 – now</span><div><h3 class=\"ds-log-role\">Team lead, development</h3><p class=\"ds-log-body\">Leading a team of seven developers, responsible for roughly 25 systems in production.</p></div></li></ol>",
+      "css": ".ds-log { list-style: none; margin: 0; padding: 0; } .ds-log-entry { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 2rem; align-items: start; padding: 0 0 3rem 2rem; border-left: 1px solid var(--rule, #1B2434); position: relative; } .ds-log-entry::before { content: ''; position: absolute; left: -4px; top: 0.55em; width: 7px; height: 7px; background: var(--ice, #8FC7FF); transform: rotate(45deg); } .ds-log-when { font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ember, #F2A65A); } .ds-log-role { font-family: var(--display, 'Bluu Next', 'Times New Roman', serif); font-weight: 600; font-size: 1.25rem; line-height: 1.05; letter-spacing: -0.015em; color: var(--parchment, #CFC5AE); margin: 0 0 0.5rem; } .ds-log-body { margin: 0; font-family: var(--prose, Spectral, Georgia, serif); font-weight: 300; font-size: 0.8125rem; line-height: 1.7; color: var(--starlight, #E6E9F2); opacity: 0.82; max-width: 62ch; }"
+    },
+    {
+      "name": "Catalogue Star",
+      "kind": "custom",
+      "refersTo": "panel-chart",
+      "description": "The signature component. A repository plotted on graph paper: the constellation lines are SVG in chart units, each star is an HTML link positioned by percentage but sized in real pixels, so the radius (r = 3.5 + 2.6*ln(1+stars)) means the same at every viewport. Colour is the language's spectral class. Each star carries an invisible 44px hit area and an aria-label; the visible label is aria-hidden so the name is not announced twice.",
+      "html": "<figure class=\"ds-chart\"><div class=\"ds-chart-plot\"><svg viewBox=\"0 0 100 72\" aria-hidden=\"true\" focusable=\"false\"><g class=\"ds-chart-lines\" stroke-width=\"0.18\" fill=\"none\"><line x1=\"32\" y1=\"14\" x2=\"50\" y2=\"40\"/><line x1=\"70\" y1=\"22\" x2=\"50\" y2=\"40\"/></g></svg><div class=\"ds-chart-stars\"><a class=\"ds-star\" href=\"#\" aria-label=\"heap-seance, 4 stars, opens in a new tab\" style=\"--x:32%;--y:19.4%;--r:7.7px;--c:var(--spectral-f,#FFE9B8)\"><span class=\"ds-star-halo\"></span><span class=\"ds-star-disc\"></span><span class=\"ds-star-label\" aria-hidden=\"true\">heap-seance</span></a><a class=\"ds-star\" href=\"#\" aria-label=\"spring-grimoire, 2 stars, opens in a new tab\" style=\"--x:50%;--y:55.6%;--r:6.4px;--c:var(--spectral-b,#A8C8FF)\"><span class=\"ds-star-halo\"></span><span class=\"ds-star-disc\"></span><span class=\"ds-star-label\" aria-hidden=\"true\">spring-grimoire</span></a></div></div><figcaption class=\"ds-chart-legend\"><span>Size = GitHub stars</span><span class=\"ds-legend-key\"><i style=\"--c:var(--spectral-b,#A8C8FF)\"></i>Shell</span><span class=\"ds-legend-key\"><i style=\"--c:var(--spectral-f,#FFE9B8)\"></i>Python</span></figcaption></figure>",
+      "css": ".ds-chart { margin: 0; border: 1px solid var(--rule, #1B2434); background: linear-gradient(var(--rule, #1B2434) 1px, transparent 1px) 0 0 / 100% 40px, linear-gradient(90deg, var(--rule, #1B2434) 1px, transparent 1px) 0 0 / 40px 100%, var(--panel, #0E131F); padding: 1rem; } .ds-chart-plot { position: relative; } .ds-chart-plot svg { display: block; width: 100%; height: auto; overflow: visible; } .ds-chart-lines { stroke: var(--rule-bright, #2C3A52); } .ds-chart-stars { position: absolute; inset: 0; } .ds-star { position: absolute; left: var(--x); top: var(--y); width: calc(var(--r) * 2); height: calc(var(--r) * 2); transform: translate(-50%, -50%); border-radius: 50%; text-decoration: none; } .ds-star::before { content: ''; position: absolute; left: 50%; top: 50%; width: 44px; height: 44px; transform: translate(-50%, -50%); } .ds-star-halo { position: absolute; left: 50%; top: 50%; width: calc(var(--r) * 6); height: calc(var(--r) * 6); transform: translate(-50%, -50%); border-radius: 50%; background: var(--c); opacity: 0.14; transition: opacity 200ms ease; } .ds-star-disc { position: absolute; inset: 0; border-radius: 50%; background: var(--c); } .ds-star-label { position: absolute; top: calc(100% + 0.5rem); left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; line-height: 1; letter-spacing: 0.14em; color: var(--dim, #7C8799); transition: color 180ms ease; } .ds-star:hover .ds-star-halo, .ds-star:focus-visible .ds-star-halo { opacity: 0.3; } .ds-star:hover .ds-star-label, .ds-star:focus-visible .ds-star-label { color: var(--starlight, #E6E9F2); } .ds-star:focus-visible { outline: 2px solid var(--ice, #8FC7FF); outline-offset: 3px; } .ds-chart-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--rule, #1B2434); font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim, #7C8799); } .ds-legend-key { display: inline-flex; align-items: center; gap: 0.5rem; } .ds-legend-key i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); display: inline-block; }"
+    },
+    {
+      "name": "Hero Spectrum",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "The second signature component: an absorption spectrum standing in for a skills list. A blue-to-red continuum band with six absorption lines at the positions of six labelled technologies. The band wipes in from the left, then the lines drop in staggered 60ms apart. The SVG is aria-hidden; the technology names are carried as real text beneath it.",
+      "html": "<div class=\"ds-spectrum\" role=\"img\" aria-label=\"Spectral analysis showing Java, Spring, JVM, Oracle, Angular and AI as absorption lines\"><svg viewBox=\"0 0 1000 84\" preserveAspectRatio=\"none\" aria-hidden=\"true\" focusable=\"false\"><defs><linearGradient id=\"ds-continuum\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0%\" stop-color=\"#3B5BA8\"/><stop offset=\"18%\" stop-color=\"#5E8FD6\"/><stop offset=\"38%\" stop-color=\"#8FC7FF\"/><stop offset=\"56%\" stop-color=\"#DDE6D8\"/><stop offset=\"74%\" stop-color=\"#F2A65A\"/><stop offset=\"100%\" stop-color=\"#C4553F\"/></linearGradient></defs><rect class=\"ds-spectrum-band\" x=\"0\" y=\"0\" width=\"1000\" height=\"44\" fill=\"url(#ds-continuum)\"/><g class=\"ds-spectrum-lines\" fill=\"#04060C\"><rect style=\"--i:0\" x=\"118\" y=\"0\" width=\"6\" height=\"44\"/><rect style=\"--i:1\" x=\"253\" y=\"0\" width=\"4\" height=\"44\"/><rect style=\"--i:2\" x=\"388\" y=\"0\" width=\"7\" height=\"44\"/><rect style=\"--i:3\" x=\"518\" y=\"0\" width=\"5\" height=\"44\"/><rect style=\"--i:4\" x=\"688\" y=\"0\" width=\"6\" height=\"44\"/><rect style=\"--i:5\" x=\"853\" y=\"0\" width=\"4\" height=\"44\"/></g><g class=\"ds-spectrum-ticks\" stroke=\"#2C3A52\" stroke-width=\"1\"><line x1=\"121\" y1=\"44\" x2=\"121\" y2=\"58\"/><line x1=\"255\" y1=\"44\" x2=\"255\" y2=\"58\"/><line x1=\"391\" y1=\"44\" x2=\"391\" y2=\"58\"/><line x1=\"520\" y1=\"44\" x2=\"520\" y2=\"58\"/><line x1=\"691\" y1=\"44\" x2=\"691\" y2=\"58\"/><line x1=\"855\" y1=\"44\" x2=\"855\" y2=\"58\"/></g></svg><ul class=\"ds-spectrum-labels\"><li style=\"--x:12.1%\">Java</li><li style=\"--x:25.5%\">Spring</li><li style=\"--x:39.1%\">JVM</li><li style=\"--x:52.0%\">Oracle</li><li style=\"--x:69.1%\">Angular</li><li style=\"--x:85.5%\">AI / LLM</li></ul></div>",
+      "css": ".ds-spectrum { position: relative; max-width: 860px; } .ds-spectrum svg { display: block; width: 100%; height: 84px; } .ds-spectrum-band { transform-origin: left center; animation: ds-wipe 420ms 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both; } .ds-spectrum-lines rect { opacity: 0; animation: ds-drop 240ms ease forwards; animation-delay: calc(500ms + var(--i) * 60ms); } .ds-spectrum-ticks { opacity: 0; animation: ds-fade 400ms 800ms ease forwards; } .ds-spectrum-labels { list-style: none; margin: 0; padding: 0; position: relative; height: 1.4em; opacity: 0; animation: ds-fade 500ms 800ms ease forwards; font-family: var(--mono, 'JetBrains Mono', ui-monospace, Menlo, monospace); font-size: 0.6875rem; font-weight: 500; text-transform: uppercase; } .ds-spectrum-labels li { position: absolute; left: var(--x); transform: translateX(-50%); color: var(--parchment, #CFC5AE); letter-spacing: 0.1em; white-space: nowrap; } @keyframes ds-wipe { from { transform: scaleX(0); } to { transform: scaleX(1); } } @keyframes ds-drop { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } } @keyframes ds-fade { to { opacity: 1; } } @media (max-width: 480px) { .ds-spectrum-labels { position: static; height: auto; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; } .ds-spectrum-labels li { position: static; left: auto; transform: none; } } @media (prefers-reduced-motion: reduce) { .ds-spectrum-band, .ds-spectrum-lines rect, .ds-spectrum-ticks, .ds-spectrum-labels { animation: none !important; opacity: 1 !important; transform: none !important; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Celestial Forensics",
+    "overview": "Two disciplines read the past out of a frozen image. A thread dump is a still of a system that no longer exists; a stellar spectrum is light from a body that may already have gone out. This system is built on that parallel as a structural fact, not as decoration — which is why the page is an engraved star atlas rather than a developer portfolio wearing a space theme. Sections are plates. Labels are catalogue entries. The five open-source tools are plotted as a constellation whose star radii are the real GitHub star counts, not an illustration.\n\nThe register is precise and instrument-like, quiet and unhurried. Structure is drawn with 1px hairlines rather than asserted with filled boxes. Nothing is approximate: the mono voice carries every measurement, coordinate and designation, and the serif voices are reserved for the two things a person actually reads — a name and a paragraph. There is exactly one orchestrated moment, the hero load sequence, and after it the page holds still. Motion that is not carrying information does not exist here.\n\nPrecision is not coldness, and this is not an archival system. Warmth is rationed rather than absent, and it is placed where a person is present: parchment for everything that has been catalogued by hand, and ember reserved for human time — the thesis beside the hero, the dates in the log. The exactness is a form of hospitality. A reader who can see that every number is real and every line is placed on purpose stops checking and starts reading, which is the whole point of holding the page this still.\n\nThe arcane lives entirely in the vocabulary — thread-necromancer, heap-seance, gc-exorcist — and is never restated visually. No skulls, no runes, no gothic ornament. The darkness is an observing condition, not a mood board. The discarded predecessor of this site was a violet Tailwind-CDN one-pager with a typing effect and six invented project cards; that page is the standing anti-reference, and violet is banned outright because of it.",
+    "keyCharacteristics": [
+      "Dark-only. There is no light theme and there will not be one.",
+      "Exactly two accents, both derived from stellar spectral classes.",
+      "Square corners everywhere; 2px on buttons and nothing else.",
+      "Hairlines over containers: 1px rules do the structural work.",
+      "Three type voices with strictly separated jobs.",
+      "No cast shadows anywhere in the system.",
+      "Warmth is rationed, not absent: parchment for the catalogued, ember for human time."
+    ],
+    "rules": [
+      {
+        "name": "The Two-Accent Rule",
+        "body": "Ice and ember are the entire accent vocabulary. A third accent is never introduced, and violet is prohibited outright as the anti-reference. Language dots are data, not accents, and are exempt.",
+        "section": "colors"
+      },
+      {
+        "name": "The Starlight/Parchment Rule",
+        "body": "Starlight is for what you read; parchment is for what has been catalogued. Prose is starlight, values are parchment. Mixing them flattens the distinction between narration and record, which is the page's central device.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ember Scarcity Rule",
+        "body": "Ember appears at most twice per screen. Its job is to mark human time; spending it anywhere else makes the ice signal meaningless.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Bluu Next states, Spectral explains, JetBrains Mono measures. No voice takes another's job. A number that is a measurement is mono; a number that is a headline figure is Bluu Next; nothing that is prose is ever mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Wide Label Rule",
+        "body": "Mono labels are always uppercase and always tracked at 0.18em or wider. A tight, lowercase mono string reads as code; a wide, uppercase one reads as an instrument marking. This system only ever wants the second.",
+        "section": "typography"
+      },
+      {
+        "name": "The Asymmetric Pair Rule",
+        "body": "Paired columns are 3fr/2fr. A 50/50 split reads as a web layout; an uneven one reads as a plate with a margin note, which is what these sections are.",
+        "section": "layout"
+      },
+      {
+        "name": "The Fixed-Axis Rule",
+        "body": "Where an element carries a label and a value, the label sits in the --axis column (200px) so labels align into one visible axis down the page. Fluid label columns destroy the instrument-panel read, and a second axis width would destroy the alignment.",
+        "section": "layout"
+      },
+      {
+        "name": "The Light Emits, Never Falls Rule",
+        "body": "Radiance is allowed; cast shadows are not. A halo around a light source is a physical fact of the subject. A drop shadow under a card is a UI convention from a different world, and it does not enter this one.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Three Grounds Rule",
+        "body": "Surfaces come in exactly three tones. Void is the page, deepfield is the alternating plate, panel is a real container. A fourth surface tone means the hierarchy has gone wrong somewhere else.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Corner Rule",
+        "body": "Radius is 0 unless the element is a button (2px) or a depicted star (50%). There is no third case.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Drawn-Not-Boxed Rule",
+        "body": "Prefer a hairline to a container. A list of rows gets rules between them, never a card each. Fill is reserved for surfaces that are genuinely objects.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do draw structure with 1px hairlines in rule (#1B2434), reserving rule-bright (#2C3A52) for borders under emphasis.",
+      "Do keep every measurement, label, coordinate and repository name in JetBrains Mono, uppercase, tracked 0.18em or wider.",
+      "Do put prose in starlight and catalogued values in parchment — the distinction is the page's central device.",
+      "Do use the 4px spacing scale exclusively, and give plates 6rem of vertical padding on mobile, 10rem on desktop.",
+      "Do split paired columns 3fr/2fr and collapse them at 900px.",
+      "Do make anything derived from live data survive the API being unreachable, with a stated fallback — star radii fall back to 5px, the feed falls back to a calm line and a profile link.",
+      "Do disable every animation, including the starfield drift, under prefers-reduced-motion: reduce, and keep all content visible without JavaScript.",
+      "Do state the mapping whenever a visual property encodes data, as the catalogue legend does with \"Size = GitHub stars\".",
+      "Do put the heading first and hang its designation in the --axis column beside it, or beneath it as a caption below 900px."
+    ],
+    "donts": [
+      "Don't ask the display face for a weight it does not have. Bluu Next ships one cut; a synthesised bold smears exactly the stroke contrast it is chosen for.",
+      "Don't set a tracked-caps label above a heading. The heading comes first in the markup and on the page; a designation belongs in the margin axis or under the heading, never stacked over it.",
+      "Don't introduce a third accent, and never use violet — it is the anti-reference of the discarded predecessor.",
+      "Don't add a light theme. The aesthetic lives on the black ground and a light mode would break the core idea.",
+      "Don't round a corner beyond 2px. Radius is 0 for everything except buttons (2px) and depicted stars (50%).",
+      "Don't add a box-shadow. Depth is tonal layering, hairlines and parallax; halos are permitted, cast shadows are not.",
+      "Don't add occult ornament — no skulls, pentagrams, runes or gothic decoration. The arcane is carried by the tool names alone.",
+      "Don't spend ember on anything but human time: the hero thesis rule and the log dates.",
+      "Don't use pure black (#000) or pure white (#FFF). The ground is void (#04060C); text is starlight (#E6E9F2) or parchment (#CFC5AE).",
+      "Don't wrap a list of rows in cards when hairlines between them will do.",
+      "Don't animate anything that is not carrying information. The page gets one orchestrated moment at load and then holds still."
+    ]
+  }
+}

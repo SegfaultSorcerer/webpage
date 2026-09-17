@@ -9,9 +9,12 @@
   <meta name="color-scheme" content="dark">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
+  <!-- The hero name is the LCP element, and its face is self-hosted: preload it. -->
+  <link rel="preload" href="assets/fonts/bluunext-bold.woff2" as="font" type="font/woff2" crossorigin>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/layout.css">
@@ -23,7 +26,7 @@
 
   <noscript>
     <style>
-      .hero__eyebrow, .hero__name span, .spectrum, .spectrum__labels,
+      .hero__coords, .hero__name span, .spectrum, .spectrum__labels,
       .hero__line, .hero__actions, .reveal { opacity: 1 !important; transform: none !important; }
     </style>
   </noscript>
@@ -72,12 +75,12 @@
     <span id="top"></span>
     <section id="hero" class="hero">
       <div class="container hero__inner">
-        <p class="hero__eyebrow mono" data-i18n="hero.eyebrow">Segfaultsorcerer &middot; Frankfurt am Main &middot; 50.11&deg;N 8.68&deg;E</p>
-
         <h1 class="hero__name">
           <span>Patrik</span>
           <span>Neumann</span>
         </h1>
+
+        <p class="hero__coords mono" data-i18n="hero.eyebrow">Segfaultsorcerer &middot; Frankfurt am Main &middot; 50.11&deg;N 8.68&deg;E</p>
 
         <div class="spectrum" role="img" data-i18n-label="hero.spectrum_alt" aria-label="Spectral analysis showing Java, Spring, JVM, Oracle, Angular and AI as absorption lines">
           <svg viewBox="0 0 1000 84" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -92,7 +95,7 @@
               </linearGradient>
             </defs>
             <rect class="spectrum__band" x="0" y="0" width="1000" height="44" fill="url(#continuum)"/>
-            <g class="spectrum__lines" fill="#04060C">
+            <g class="spectrum__lines">
               <rect class="spectrum__line" style="--i:0" x="118" y="0" width="6" height="44"/>
               <rect class="spectrum__line" style="--i:1" x="253" y="0" width="4" height="44"/>
               <rect class="spectrum__line" style="--i:2" x="388" y="0" width="7" height="44"/>
@@ -100,7 +103,7 @@
               <rect class="spectrum__line" style="--i:4" x="688" y="0" width="6" height="44"/>
               <rect class="spectrum__line" style="--i:5" x="853" y="0" width="4" height="44"/>
             </g>
-            <g class="spectrum__ticks" stroke="#2C3A52" stroke-width="1">
+            <g class="spectrum__ticks" stroke-width="1">
               <line x1="121" y1="44" x2="121" y2="58"/>
               <line x1="255" y1="44" x2="255" y2="58"/>
               <line x1="391" y1="44" x2="391" y2="58"/>
@@ -123,7 +126,7 @@
 
         <div class="hero__actions">
           <a class="btn" href="#catalogue" data-i18n="hero.cta_catalogue">See the catalogue</a>
-          <a class="btn btn--ghost" href="https://github.com/SegfaultSorcerer" target="_blank" rel="noopener" data-i18n="hero.cta_github">GitHub profile</a>
+          <a class="btn btn--ghost" href="https://github.com/SegfaultSorcerer" target="_blank" rel="noopener" data-i18n="hero.cta_github" data-i18n-label="hero.cta_github_a11y" aria-label="GitHub profile, opens in a new tab">GitHub profile</a>
         </div>
       </div>
     </section>
@@ -151,11 +154,11 @@
     <section id="observer" class="plate">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="observer.eyebrow">Observer</span>
           <h2 class="plate__title" data-i18n="observer.title">Who is looking through the instrument</h2>
+          <span class="plate__designation" data-i18n="observer.eyebrow">Observer</span>
         </header>
 
-        <div class="observer">
+        <div class="observer plate__body">
           <div class="observer__prose reveal">
             <p data-i18n="observer.p1">I am a senior full-stack developer and development team lead near Frankfurt am Main, with a Master's degree in Applied Computer Science from the University of Duisburg-Essen. My working life is the Java and Spring ecosystem: microservice architectures, large Oracle schemas and full-stack applications that carry critical business functions in the pharmaceutical industry.</p>
             <p data-i18n="observer.p2">What holds my attention is the point where ordinary software engineering meets machine learning. I put LLMs and document-processing models into production pipelines, not as experiments but as tested components with clear failure modes, using Spring AI alongside the tooling that Claude and Codex have made practical.</p>
@@ -178,8 +181,8 @@
     <section id="instruments" class="plate plate--alt">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="instruments.eyebrow">Instruments</span>
           <h2 class="plate__title" data-i18n="instruments.title">What I work with</h2>
+          <span class="plate__designation" data-i18n="instruments.eyebrow">Instruments</span>
         </header>
 
         <div class="instruments reveal">
@@ -213,34 +216,55 @@
     <section id="catalogue" class="plate">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="catalogue.eyebrow">Catalogue</span>
           <h2 class="plate__title" data-i18n="catalogue.title">Five instruments for reading the dead</h2>
+          <span class="plate__designation" data-i18n="catalogue.eyebrow">Catalogue</span>
           <p class="plate__lead" data-i18n="catalogue.lead">Open-source tooling for JVM forensics, published as SegfaultSorcerer. Star size on the chart is the repository's GitHub star count; star colour is its main language.</p>
         </header>
 
-        <div class="catalogue reveal" id="catalogue-root">
+        <div class="catalogue plate__body reveal" id="catalogue-root">
           <figure class="chart">
-            <svg class="chart__svg" viewBox="0 0 100 72" role="group" data-i18n-label="catalogue.chart_alt" aria-label="Star chart of five open-source tools">
-              <g class="chart__lines" stroke="#2C3A52" stroke-width="0.18" fill="none"></g>
-              <g class="chart__stars"></g>
-            </svg>
+            <div class="chart__plot" role="group" data-i18n-label="catalogue.chart_alt" aria-label="Star chart of five open-source tools">
+              <svg class="chart__svg" viewBox="0 0 100 72" aria-hidden="true" focusable="false">
+                <g class="chart__lines" stroke-width="0.18" fill="none"></g>
+              </svg>
+              <div class="chart__stars"></div>
+            </div>
             <figcaption class="chart__legend mono">
               <span data-i18n="catalogue.legend_size">Size = GitHub stars</span>
-              <span class="legend__key"><i style="--c:#A8C8FF"></i>Shell</span>
-              <span class="legend__key"><i style="--c:#FFE9B8"></i>Python</span>
-              <span class="legend__key"><i style="--c:#FFB86B"></i>Rust</span>
+              <span class="legend__key"><i style="--c:var(--spectral-b)"></i>Shell</span>
+              <span class="legend__key"><i style="--c:var(--spectral-f)"></i>Python</span>
+              <span class="legend__key"><i style="--c:var(--spectral-k)"></i>Rust</span>
             </figcaption>
           </figure>
 
           <div class="entry" id="catalogue-entry" aria-live="polite"></div>
+          <ol class="catalogue__list"></ol>
+          <figure class="specimen">
+            <figcaption class="specimen__caption mono" id="specimen-caption" data-i18n="catalogue.specimen">Specimen &middot; thread-necromancer, reading a thread dump</figcaption>
+            <pre class="specimen__body" tabindex="0" aria-labelledby="specimen-caption">## Thread Dump Analysis Report
+
+### Thread State Distribution
+| State         | Count | Percentage | Assessment           |
+|---------------|-------|------------|----------------------|
+| RUNNABLE      | 23    | 9.3%       | Healthy              |
+| WAITING       | 147   | 59.5%      | High &mdash; check below   |
+| BLOCKED       | 32    | 13.0%      | Contention!          |
+
+### Contention Hotspots
+| Severity | Lock / Monitor             | Waiting | Holder  |
+|----------|----------------------------|---------|---------|
+| CRITICAL | HikariPool.getConnection   | 147     | exec-42 |
+| CRITICAL | LegacyService.synchronized | 23      | exec-17 |</pre>
+          </figure>
         </div>
+
       </div>
     </section>
     <section id="log" class="plate plate--alt">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="log.eyebrow">Observation log</span>
           <h2 class="plate__title" data-i18n="log.title">Where the time went</h2>
+          <span class="plate__designation" data-i18n="log.eyebrow">Observation log</span>
         </header>
 
         <ol class="log">
@@ -271,17 +295,17 @@
     <section id="transmissions" class="plate">
       <div class="container">
         <header class="plate__head reveal">
-          <span class="eyebrow" data-i18n="transmissions.eyebrow">Transmissions</span>
           <h2 class="plate__title" data-i18n="transmissions.title">Everything else on the profile</h2>
+          <span class="plate__designation" data-i18n="transmissions.eyebrow">Transmissions</span>
           <p class="plate__lead" data-i18n="transmissions.lead">Public repositories, read live from the GitHub API and sorted by most recent activity.</p>
         </header>
 
-        <div class="feed" id="feed">
+        <div class="feed plate__body" id="feed">
           <p class="feed__status mono" data-i18n="transmissions.loading">Reading the catalogue...</p>
         </div>
 
-        <p class="feed__foot">
-          <a class="btn" href="https://github.com/SegfaultSorcerer" target="_blank" rel="noopener" data-i18n="transmissions.profile">Full profile on GitHub</a>
+        <p class="feed__foot plate__body">
+          <a class="btn" href="https://github.com/SegfaultSorcerer" target="_blank" rel="noopener" data-i18n="transmissions.profile" data-i18n-label="transmissions.profile_a11y" aria-label="Full profile on GitHub, opens in a new tab">Full profile on GitHub</a>
         </p>
       </div>
     </section>
