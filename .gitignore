@@ -5,3 +5,8 @@
 .impeccable/hook.cache.json
 .impeccable/live/roots.json
 .impeccable/live/server.json
+
+# Editor scratch files
+*.swp
+*.swo
+*~
